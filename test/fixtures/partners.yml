@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  governante: MyString
+  region: MyString
+  partnership_start_date: 2014-01-15
+  status: MyString
+  osra_id: 1
+
+two:
+  name: MyString
+  governante: MyString
+  region: MyString
+  partnership_start_date: 2014-01-15
+  status: MyString
+  osra_id: 1

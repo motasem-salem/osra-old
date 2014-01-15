@@ -1,0 +1,1 @@
+require "#{Rails.root}/lib/assets/multi_parameter_attributes"

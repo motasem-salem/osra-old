@@ -1,0 +1,60 @@
+<%- model_class = Sponsor -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%= model_class.human_attribute_name(:type) %></th>
+      <th><%= model_class.human_attribute_name(:orgnization_id) %></th>
+      <th><%= model_class.human_attribute_name(:gender) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:country) %></th>
+      <th><%= model_class.human_attribute_name(:partnership_start_date) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:contact_1) %></th>
+      <th><%= model_class.human_attribute_name(:contact_2) %></th>
+      <th><%= model_class.human_attribute_name(:additional_info) %></th>
+      <th><%= model_class.human_attribute_name(:osra_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sponsors.each do |sponsor| %>
+      <tr>
+        <td><%= link_to sponsor.id, sponsor_path(sponsor) %></td>
+        <td><%= sponsor.name %></td>
+        <td><%= sponsor.status %></td>
+        <td><%= sponsor.type %></td>
+        <td><%= sponsor.orgnization_id %></td>
+        <td><%= sponsor.gender %></td>
+        <td><%= sponsor.address %></td>
+        <td><%= sponsor.country %></td>
+        <td><%= sponsor.partnership_start_date %></td>
+        <td><%= sponsor.email %></td>
+        <td><%= sponsor.contact_1 %></td>
+        <td><%= sponsor.contact_2 %></td>
+        <td><%= sponsor.additional_info %></td>
+        <td><%= sponsor.osra_id %></td>
+        <td><%=l sponsor.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_sponsor_path(sponsor), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      sponsor_path(sponsor),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_sponsor_path,
+            :class => 'btn btn-primary' %>

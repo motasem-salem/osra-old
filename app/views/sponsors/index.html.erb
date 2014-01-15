@@ -1,0 +1,51 @@
+<h1>Listing sponsors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Type</th>
+      <th>Orgnization</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Country</th>
+      <th>Partnership start date</th>
+      <th>Email</th>
+      <th>Contact 1</th>
+      <th>Contact 2</th>
+      <th>Additional info</th>
+      <th>Osra</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sponsors.each do |sponsor| %>
+      <tr>
+        <td><%= sponsor.name %></td>
+        <td><%= sponsor.status %></td>
+        <td><%= sponsor.type %></td>
+        <td><%= sponsor.orgnization_id %></td>
+        <td><%= sponsor.gender %></td>
+        <td><%= sponsor.address %></td>
+        <td><%= sponsor.country %></td>
+        <td><%= sponsor.partnership_start_date %></td>
+        <td><%= sponsor.email %></td>
+        <td><%= sponsor.contact_1 %></td>
+        <td><%= sponsor.contact_2 %></td>
+        <td><%= sponsor.additional_info %></td>
+        <td><%= sponsor.osra_id %></td>
+        <td><%= link_to 'Show', sponsor %></td>
+        <td><%= link_to 'Edit', edit_sponsor_path(sponsor) %></td>
+        <td><%= link_to 'Destroy', sponsor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sponsor', new_sponsor_path %>

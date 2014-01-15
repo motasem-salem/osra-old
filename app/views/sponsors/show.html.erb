@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sponsor.name %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @sponsor.status %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @sponsor.type %>
+</p>
+
+<p>
+  <strong>Orgnization:</strong>
+  <%= @sponsor.orgnization_id %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @sponsor.gender %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @sponsor.address %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @sponsor.country %>
+</p>
+
+<p>
+  <strong>Partnership start date:</strong>
+  <%= @sponsor.partnership_start_date %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @sponsor.email %>
+</p>
+
+<p>
+  <strong>Contact 1:</strong>
+  <%= @sponsor.contact_1 %>
+</p>
+
+<p>
+  <strong>Contact 2:</strong>
+  <%= @sponsor.contact_2 %>
+</p>
+
+<p>
+  <strong>Additional info:</strong>
+  <%= @sponsor.additional_info %>
+</p>
+
+<p>
+  <strong>Osra:</strong>
+  <%= @sponsor.osra_id %>
+</p>
+
+<%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |
+<%= link_to 'Back', sponsors_path %>
