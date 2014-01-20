@@ -14,4 +14,21 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require bootstrap-datepicker
 //= require_tree .
+
+
+
+var ready;
+ready = function() {
+  $('[data-behaviour~=datepicker]').datepicker({
+    format: "yyyy-mm-dd",
+    todayBtn: "linked",
+    todayHighlight: true,
+    language: "ar",
+    autoclose: true
+  });
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

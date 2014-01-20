@@ -41,7 +41,8 @@
   </div>
   <div class="field">
     <%= f.label :partnership_start_date %><br>
-    <%= f.date_select :partnership_start_date %>
+    <%#= f.date_select :partnership_start_date %>
+    <%= f.text_field :partnership_start_date, "data-behaviour" => 'datepicker' %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
