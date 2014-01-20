@@ -7,7 +7,7 @@ ar:
     links:
       back: "رجوع"
       cancel: "إلغاء"
-      confirm: "هل أنت متأمد؟"
+      confirm: "هل أنت متأكد؟"
       destroy: "حذف"
       new: "جديد"
       edit: "تعديل"
