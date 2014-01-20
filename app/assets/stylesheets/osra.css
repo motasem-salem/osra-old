@@ -1,8 +1,12 @@
-.form-horizontal .control-label{
+body.rtl {
+  direction: rtl;
+}
+
+.rtl .form-horizontal .control-label{
   float: right;
 }
 
-.dl-horizontal dt{
+.rtl .dl-horizontal dt{
   float: right;
   clear: right;
 }
