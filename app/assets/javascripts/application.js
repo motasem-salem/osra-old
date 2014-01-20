@@ -28,7 +28,8 @@ ready = function() {
     todayHighlight: true,
     language: "ar",
     autoclose: true,
-    weekStart: 6
+    weekStart: 6,
+    orientation: "auto right"
   });
 };
 
