@@ -16,6 +16,11 @@
   <dd><%= @organization.status %></dd>
   <dt><strong><%= model_class.human_attribute_name(:osra_id) %>:</strong></dt>
   <dd><%= @organization.osra_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sponsors) %>:</strong></dt>
+  <dd><% @organization.sponsors.each do |s| %>
+    <%= link_to s.name, sponsors_path(s) %>
+    <% end %>
+  </dd>
 </dl>
 
 <div class="form-actions">

@@ -9,4 +9,6 @@ class Organization
   field :partnership_start_date, type: Date
   field :status, type: String
   field :osra_id, type: Integer
+
+  has_many :sponsors
 end
