@@ -2,17 +2,11 @@ body{
   direction: rtl;
 }
 
-.field {
-  margin-bottom: 10px;
+.form-horizontal .control-label{
+  float: right;
 }
 
-.field label{
-  margin-bottom: -15px;
-}
-
-th, td {
-  border-bottom: 1px solid #E5EFF8;
-  color: #678197;
-  padding: 0.3em 0.6em;
-  text-align: center;
+.dl-horizontal dt{
+  float: right;
+  clear: right;
 }

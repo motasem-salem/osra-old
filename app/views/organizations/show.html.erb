@@ -1,34 +1,31 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Organization -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @organization.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @organization.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
+  <dd><%= @organization.country %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:region) %>:</strong></dt>
+  <dd><%= @organization.region %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:partnership_start_date) %>:</strong></dt>
+  <dd><%= @organization.partnership_start_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @organization.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:osra_id) %>:</strong></dt>
+  <dd><%= @organization.osra_id %></dd>
+</dl>
 
-<p>
-  <strong>Country:</strong>
-  <%= @organization.country %>
-</p>
-
-<p>
-  <strong>Region:</strong>
-  <%= @organization.region %>
-</p>
-
-<p>
-  <strong>Partnership start date:</strong>
-  <%= @organization.partnership_start_date %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @organization.status %>
-</p>
-
-<p>
-  <strong>Osra id:</strong>
-  <%= @organization.osra_id %>
-</p>
-
-<%= link_to 'Edit', edit_organization_path(@organization) %> |
-<%= link_to 'Back', organizations_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              organizations_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_organization_path(@organization), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              organization_path(@organization),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
