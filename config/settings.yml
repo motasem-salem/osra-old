@@ -1,0 +1,19 @@
+countries:
+  - Syria
+governantes:
+  - Damascus
+  - Homs
+  - Aleppo
+regions:
+  - aaa
+statuses:
+  - Active
+  - Inactive
+  - On hold
+  - Under Revision
+gender:
+  - Male
+  - Female
+sponsor_type:
+  - Individual
+  - Organization

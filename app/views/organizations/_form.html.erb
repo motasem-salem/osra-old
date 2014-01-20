@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :country %><br>
-    <%= f.text_field :country %>
+    <%= f.select :country, Settings.countries %>
   </div>
   <div class="field">
     <%= f.label :region %><br>
-    <%= f.text_field :region %>
+    <%= f.select :region, Settings.regions %>
   </div>
   <div class="field">
     <%= f.label :partnership_start_date %><br>
@@ -30,7 +30,7 @@
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.select :status, Settings.statuses %>
   </div>
   <div class="field">
     <%= f.label :osra_id %><br>

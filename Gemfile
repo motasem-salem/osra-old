@@ -46,5 +46,8 @@ gem 'thin', group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# configurations
+gem "rails_config"
+
 # html helper
 gem 'bootstrap-datepicker-rails'

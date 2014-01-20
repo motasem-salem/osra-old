@@ -17,19 +17,19 @@
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.select :status, Settings.statuses %>
   </div>
   <div class="field">
     <%= f.label :type %><br>
-    <%= f.text_field :type %>
+    <%= f.select :type, Settings.sponsor_type %>
   </div>
   <div class="field">
     <%= f.label :organization_id %><br>
-    <%= f.number_field :organization_id %>
+    <%= f.select :organization_id , options_from_collection_for_select(Organization.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
+    <%= f.select :gender, Settings.gender %>
   </div>
   <div class="field">
     <%= f.label :address %><br>
@@ -37,16 +37,15 @@
   </div>
   <div class="field">
     <%= f.label :country %><br>
-    <%= f.text_field :country %>
+    <%= f.select :country, Settings.countries %>
   </div>
   <div class="field">
     <%= f.label :partnership_start_date %><br>
-    <%#= f.date_select :partnership_start_date %>
     <%= f.text_field :partnership_start_date, "data-behaviour" => 'datepicker' %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
   </div>
   <div class="field">
     <%= f.label :contact_1 %><br>
