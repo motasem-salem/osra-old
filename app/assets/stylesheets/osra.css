@@ -10,3 +10,16 @@ body.rtl {
   float: right;
   clear: right;
 }
+
+body.ltr {
+  direction: ltr;
+}
+
+.ltr .form-horizontal .control-label{
+  float: left;
+}
+
+.ltr .dl-horizontal dt{
+  float: left;
+  clear: left;
+}
