@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @organization.name %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @organization.country %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @organization.region %>
+</p>
+
+<p>
+  <strong>Partnership start date:</strong>
+  <%= @organization.partnership_start_date %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @organization.status %>
+</p>
+
+<p>
+  <strong>Osra:</strong>
+  <%= @organization.osra_id %>
+</p>
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>
