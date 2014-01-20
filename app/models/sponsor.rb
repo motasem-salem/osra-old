@@ -3,7 +3,7 @@ class Sponsor
   include Mongoid::Timestamps
   include Mongoid::MultiParameterAttributes
 
-  belongs_to :orgnization
+  belongs_to :organization
 
   field :name, type: String
   field :status, type: String

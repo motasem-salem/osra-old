@@ -8,8 +8,8 @@ class Ability
 
     if user.role :super_admin
       can :manage, :all
-    elsif user.role :orgnization_admin
-      can :manage, [ Orgnization ]
+    elsif user.role :organization_admin
+      can :manage, [ Organization ]
     elsif user.role :partner_admin
       can :manage, [ Partner ]
     elsif user.role :sponsor_admin

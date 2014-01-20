@@ -69,6 +69,6 @@ class SponsorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sponsor_params
-      params.require(:sponsor).permit(:name, :status, :type, :orgnization_id, :gender, :address, :country, :partnership_start_date, :email, :contact_1, :contact_2, :additional_info, :osra_id)
+      params.require(:sponsor).permit(:name, :status, :type, :organization_id, :gender, :address, :country, :partnership_start_date, :email, :contact_1, :contact_2, :additional_info, :osra_id)
     end
 end

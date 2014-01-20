@@ -6,7 +6,7 @@ Osra::Application.routes.draw do
 
   resources :partners
 
-  resources :orgnizations
+  resources :organizations
 
   root 'main#index'
 
