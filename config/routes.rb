@@ -9,6 +9,7 @@ Osra::Application.routes.draw do
   resources :organizations
 
   root 'main#index'
+  get '/locale/:id' => 'main#set_locale', :as => :set_locale
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
