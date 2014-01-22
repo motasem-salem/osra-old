@@ -176,7 +176,7 @@ ar:
     select:
       prompt: الرجاء اختيار
     submit:
-      create: ! '%{model} إنشاء'
+      create: ! 'إضافة %{model}'
       submit: ! '%{model} حفظ'
       update: ! '%{model} تعديل'
   number:

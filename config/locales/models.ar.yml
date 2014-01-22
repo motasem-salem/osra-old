@@ -3,6 +3,8 @@
 
 ar:
   mongoid:
+    models:
+      partner: شريك
     attributes:
       partner:
         osra_id: رقم
