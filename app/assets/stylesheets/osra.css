@@ -23,3 +23,7 @@ body.ltr {
   float: left;
   clear: left;
 }
+
+dt, dd{
+  min-height: 20px;
+}
