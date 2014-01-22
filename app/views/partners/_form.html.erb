@@ -1,4 +1,18 @@
 <%= form_for @partner, :html => { :class => 'form-horizontal' } do |f| %>
+
+
+<% if @partner.errors.any? %>
+<div class="alert alert-danger">
+    <h4><%=t 'messages.error.validation', :default => "Validation errors:"%></h4>
+    <ul>
+    <% @partner.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">

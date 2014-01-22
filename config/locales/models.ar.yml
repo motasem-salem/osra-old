@@ -8,5 +8,6 @@ ar:
     attributes:
       partner:
         osra_id: رقم
+        name: الإسم
         governante: المحافظة 
         partnership_start_date: تاريخ الشراكة
