@@ -23,13 +23,13 @@
 var ready;
 ready = function() {
   $('[data-behaviour~=datepicker]').datepicker({
-    format: "yyyy-mm-dd",
+    format: "dd/mm/yyyy",
     todayBtn: "linked",
     todayHighlight: true,
-    language: "ar",
+    language: "en",
     autoclose: true,
     weekStart: 6,
-    orientation: "auto right"
+    orientation: "auto"
   });
 };
 

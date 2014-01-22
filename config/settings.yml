@@ -4,8 +4,6 @@ governantes:
   - Damascus
   - Homs
   - Aleppo
-regions:
-  - aaa
 statuses:
   - Active
   - Inactive
