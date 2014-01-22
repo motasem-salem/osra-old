@@ -6,13 +6,13 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
 
-    if user.role :super_admin
+    if user.role? :super_admin
       can :manage, :all
-    elsif user.role :organization_admin
+    elsif user.role? :organization_admin
       can :manage, [ Organization ]
-    elsif user.role :partner_admin
+    elsif user.role? :partner_admin
       can :manage, [ Partner ]
-    elsif user.role :sponsor_admin
+    elsif user.role? :sponsor_admin
       can :manage, [ Sponsor ]
     end
 
