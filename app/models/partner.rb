@@ -10,5 +10,6 @@ class Partner
   field :status, type: String
   field :osra_id, type: Integer
   
-  validates_presence_of :name
+  validates_presence_of :name, :partnership_start_date
+#  validates :partnership_start_date, presence: true 
 end
