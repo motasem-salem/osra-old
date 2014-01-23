@@ -1,5 +1,7 @@
 Osra::Application.routes.draw do
 
+  resources :orphans
+
   devise_for :users, :controllers => { :registrations => "users/registrations" }
 
   resources :sponsors
@@ -10,6 +12,10 @@ Osra::Application.routes.draw do
 
   root 'main#index'
   get '/locale/:id' => 'main#set_locale', :as => :set_locale
+  
+  get '/partners/:id/upload' => 'partners#upload', :as => :upload_list
+  
+  post 'partners/:id/import' => 'partners#import', :as => :import_list
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

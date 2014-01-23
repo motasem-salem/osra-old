@@ -2,7 +2,7 @@
 
 
 <% if @partner.errors.any? %>
-<div class="alert alert-danger">
+<div class="alert alert-danger" id="error_explanation">
     <h4><%=t 'messages.error.validation', :default => "Validation errors:"%></h4>
     <ul>
     <% @partner.errors.full_messages.each do |msg| %>
@@ -22,7 +22,8 @@
   <div class="control-group">
     <%= f.label :governante, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :governante, Settings.governantes %>
+      <% #debugger %>
+      <%= f.select :governante, governante_options %>
     </div>
   </div>
   <div class="control-group">
@@ -40,7 +41,7 @@
   <div class="control-group">
     <%= f.label :status, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :status, Settings.statuses %>
+      <%= f.select :status, status_options %>
     </div>
   </div>
   <div class="control-group">

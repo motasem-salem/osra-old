@@ -7,13 +7,14 @@
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @partner.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:governante) %>:</strong></dt>
-  <dd><%= @partner.governante %></dd>
+  <% #debugger %>
+  <dd><%= t_governante @partner.governante %></dd>
   <dt><strong><%= model_class.human_attribute_name(:region) %>:</strong></dt>
   <dd><%= @partner.region %></dd>
   <dt><strong><%= model_class.human_attribute_name(:partnership_start_date) %>:</strong></dt>
   <dd><%= @partner.partnership_start_date %></dd>
   <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= @partner.status %></dd>
+  <dd><%= t "statuses.#{@partner.status}", :default => @partner.status %></dd>
   <dt><strong><%= model_class.human_attribute_name(:osra_id) %>:</strong></dt>
   <dd><%= @partner.osra_id %></dd>
 </dl>
@@ -21,6 +22,8 @@
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               partners_path, :class => 'btn'  %>
+  <%= link_to t('.upload', :default => t("helpers.links.upload")),
+              upload_list_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_partner_path(@partner), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

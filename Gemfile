@@ -6,6 +6,12 @@ gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'devise'
 gem 'cancan'
 
+
+gem 'roo'
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+
+
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.0'
 

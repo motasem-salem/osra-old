@@ -60,6 +60,11 @@ class PartnersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # GET /partners/1/upload
+  def upload
+    set_partner
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
