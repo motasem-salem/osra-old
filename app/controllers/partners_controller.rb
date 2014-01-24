@@ -69,7 +69,7 @@ class PartnersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_partner
-      @partner = Partner.find(params[:id])
+      @partner = Partner.find_by(osra_id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

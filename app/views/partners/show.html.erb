@@ -1,9 +1,17 @@
-<%- model_class = Partner -%>
+<% model_class = Partner %>
+
 <div class="page-header">
 	<h1><%= t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
 <dl class="dl-horizontal">
+
+	<dt>
+		<strong><%= model_class.human_attribute_name(:osra_id) %>:</strong>
+	</dt>
+	<dd>
+		<%= @partner.osra_id %>
+	</dd>
 	<dt>
 		<strong><%= model_class.human_attribute_name(:name) %>:</strong>
 	</dt>
@@ -34,14 +42,9 @@
 	<dd>
 		<%= t "statuses.#{@partner.status}", :default => @partner.status %>
 	</dd>
-	<dt>
-		<strong><%= model_class.human_attribute_name(:osra_id) %>:</strong>
-	</dt>
-	<dd>
-		<%= @partner.osra_id %>
-	</dd>
 </dl>
 
+<% model_class = OrphanList %>
 <% if @partner.orphan_lists.size > 0 %>
 
 <h2>Orphan Lists</h2>
@@ -49,7 +52,7 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th><%= model_class.human_attribute_name(:id) %></th>
+			<th><%= model_class.human_attribute_name(:osra_id) %></th>
 			<th><%= model_class.human_attribute_name(:uploaded_list_filename) %></th>
 			<th><%= model_class.human_attribute_name(:created_at) %></th>
 			<th><%= t '.actions', :default => t("helpers.actions") %></th>
@@ -58,7 +61,7 @@
 	<tbody>
 		<% @partner.orphan_lists.each do |list| %>
 		<tr>
-			<td><%= list.id %></td>
+			<td><%= list.osra_id %></td>
 			<td><%= list.uploaded_list_filename %></td>
 			<td><%= l list.created_at %></td>
 			<td> <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -70,7 +73,11 @@
 		<% end %>
 	</tbody>
 </table>
+<% else %>
+<h2>This partner does not have any orphan lists</h2>
 <% end %>
+
+<% model_class = Partner %>
 
 <div id="upload" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 

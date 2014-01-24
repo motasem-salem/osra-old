@@ -20,3 +20,5 @@ ar:
         name: الإسم
         governante: المحافظة 
         partnership_start_date: تاريخ الشراكة
+      orphan_list:
+        osra_id: رقم القائمة

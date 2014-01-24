@@ -10,6 +10,7 @@ gem 'cancan'
 gem 'roo'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mongoid_auto_increment'
 
 
 # Use SCSS for stylesheets

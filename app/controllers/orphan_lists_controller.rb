@@ -3,7 +3,7 @@ class OrphanListsController < ApplicationController
   def create
     result = OrphanList.validate(params[:orphan_list][:uploaded_list])
     if result[:orphans]
-      partner.orphan_lists.create!(params[:orphan_list])
+      @partner.orphan_lists.create!(params[:orphan_list])
       redirect_to @partner, :notice => "List added!"
     else
       params[:validation_errors] = result[:errors]
@@ -12,7 +12,7 @@ class OrphanListsController < ApplicationController
   end
 
   def destroy
-    @orphan_list = @partner.orphan_lists.find(params[:id])
+    @orphan_list = @partner.orphan_lists.find_by(osra_id: params[:id])
     @orphan_list.destroy
     respond_to do |format|
       format.html { redirect_to partner_url(@partner) }
@@ -22,6 +22,6 @@ class OrphanListsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_partner
-    @partner = Partner.find(params[:partner_id])
+    @partner = Partner.find_by(osra_id: params[:partner_id])
   end
 end

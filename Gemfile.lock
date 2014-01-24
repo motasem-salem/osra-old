@@ -91,6 +91,8 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
+    mongoid_auto_increment (0.1.2)
+      mongoid (>= 2.0)
     moped (2.0.0.beta5)
       bson (~> 2.1)
       connection_pool (~> 1.2)
@@ -185,6 +187,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   mongoid!
+  mongoid_auto_increment
   rails (~> 4.0.2)
   rails_config
   roo

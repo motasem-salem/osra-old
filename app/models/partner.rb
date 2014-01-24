@@ -8,12 +8,15 @@ class Partner
   field :region, type: String
   field :partnership_start_date, type: Date
   field :status, type: String
-  field :osra_id, type: Integer
-  field :_id, type: String, default: ->{ osra_id } 
   
-  validates_presence_of :name, :osra_id, :partnership_start_date
-  
-# validates :partnership_start_date, presence: true 
+  auto_increment :osra_id
+   
+  validates_presence_of :name, :governante, :partnership_start_date, :status
 
   embeds_many :orphan_lists
+  
+  def to_param
+    osra_id.to_s
+  end
+
 end
