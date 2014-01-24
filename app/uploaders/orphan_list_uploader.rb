@@ -15,15 +15,6 @@ class OrphanListUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/OrphanLists/#{model.id}"
   end
-
-
-
-  process :validate_list
-  
-  def validate_list
-    
-  end
-  
   
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
