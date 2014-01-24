@@ -9,12 +9,11 @@ class Partner
   field :partnership_start_date, type: Date
   field :status, type: String
   field :osra_id, type: Integer
+  field :_id, type: String, default: ->{ osra_id } 
   
-  field :list_file
-  
-  mount_uploader :list, OrphanListUploader
-  
-  validates_presence_of :name, :partnership_start_date
+  validates_presence_of :name, :osra_id, :partnership_start_date
   
 # validates :partnership_start_date, presence: true 
+
+  embeds_many :orphan_lists
 end

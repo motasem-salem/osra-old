@@ -9,6 +9,11 @@ statuses:
   - Active
   - On Hold
   - Under Revision
+orphan_list_statuses:
+  - New
+  - Valid
+  - Invalid
+  - Imported
 gender:
   - Male
   - Female

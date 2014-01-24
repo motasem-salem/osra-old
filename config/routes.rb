@@ -6,16 +6,16 @@ Osra::Application.routes.draw do
 
   resources :sponsors
 
-  resources :partners
+  resources :partners do
+    resources :orphan_lists
+  end
 
   resources :organizations
 
   root 'main#index'
   get '/locale/:id' => 'main#set_locale', :as => :set_locale
   
-  get '/partners/:id/upload' => 'partners#upload', :as => :upload_list
-  
-  post 'partners/:id/import' => 'partners#import', :as => :import_list
+  get '/orphan_lists/errors' => 'orphan_lists#show_errors', :as => :show_errors
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

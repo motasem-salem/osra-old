@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1><%=t '.title', :default => 'Errors' %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ref</th>
+      <th>error</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  	<% @validation_errors = params[:validation_errors] %>
+    <% @validation_errors.each do |error| %>
+      <tr>
+       
+        <td>1</td>
+        <td>2</td>
+        
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+            partner_path(@partner),
+            :class => 'btn' %>

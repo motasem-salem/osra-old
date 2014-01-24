@@ -8,5 +8,7 @@ ar:
   partners:
     index:
       title: قائمة الشركاء
+    upload:
+      title: تحميل قائمة
     new:
       title: إضافة شريك جديد
