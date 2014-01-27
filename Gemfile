@@ -6,7 +6,7 @@ gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'devise'
 gem 'cancan'
 
-
+gem 'mongo'
 gem 'roo'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
