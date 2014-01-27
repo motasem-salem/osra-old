@@ -45,13 +45,18 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
-gem 'thin', group: :development
+
+group :development do
+  gem 'thin'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
 # Use debugger
-gem 'debugger', group: [:development, :test]
+# gem 'debugger', group: [:development, :test]
 
 # configurations
 gem "rails_config"

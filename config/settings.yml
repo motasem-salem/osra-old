@@ -20,3 +20,13 @@ gender:
 sponsor_type:
   - Individual
   - Organization
+orphan_list:
+  statuses:
+    - Pending
+    - Imported
+  import:
+    file_extensions:
+      - xls
+      - xlsx
+    first_row: 4
+    name_col: B

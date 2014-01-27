@@ -1,5 +1,7 @@
 class Orphan
   include Mongoid::Document
+  include Mongoid::Timestamps
+
   field :name, type: String
   field :father_name, type: String
   field :father_is_martyr, type: String

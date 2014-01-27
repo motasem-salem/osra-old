@@ -1,13 +1,11 @@
 class OrphanListsController < ApplicationController
-  before_action :set_partner, only: [:create, :destroy]
+  before_action :set_partner, only: [:import, :create, :show, :destroy]
+
   def create
-    result = OrphanList.validate(params[:orphan_list][:uploaded_list])
-    if result[:orphans]
-      @partner.orphan_lists.create!(params[:orphan_list])
-      redirect_to @partner, :notice => "List added!"
-    else
-      params[:validation_errors] = result[:errors]
-      render show_errors_path, :notice => "List NOT added!"
+    @validation_result = OrphanList.validate(params[:orphan_list][:uploaded_list])
+    @valid = @validation_result[:errors].empty?
+    if @valid
+      @orphan_list = @partner.orphan_lists.create!(params[:orphan_list])
     end
   end
 
@@ -18,6 +16,22 @@ class OrphanListsController < ApplicationController
       format.html { redirect_to partner_url(@partner) }
       format.json { head :no_content }
     end
+  end
+
+  def show
+    import
+  end
+
+  def import
+    @orphan_list = @partner.orphan_lists.find_by(osra_id: params[:id])
+    # get_orphans(@orphan_list)
+    imported_orphans = OrphanList.get_orphans(Roo::Spreadsheet.open(@orphan_list.uploaded_list.file.file))[:orphans]
+    imported_orphans.each do |o|
+      o.save
+    end
+    @orphan_list.update(:status => Settings.orphan_list_statuses[3])
+
+    redirect_to @partner, :notice => "List imported! with #{imported_orphans.size} orphans"
   end
 
   # Use callbacks to share common setup or constraints between actions.

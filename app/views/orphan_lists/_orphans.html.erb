@@ -1,0 +1,11 @@
+ORPHANS!!!!
+
+<%= @validation_result[:orphans] %>
+
+<%= @orphan_list %>
+
+
+<%= link_to t('.import', :default => t("helpers.links.import")),
+            import_partner_orphan_list_path(@partner, @orphan_list),
+            :method => 'post',
+            :class => 'btn' %>
