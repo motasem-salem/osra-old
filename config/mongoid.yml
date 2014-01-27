@@ -74,4 +74,5 @@ test:
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOHQ_URL'] %>
+#      uri: <%= ENV['MONGOHQ_URL'] %>
+       uri: "mongodb://orsa_prod:spababigov@troup.mongohq.com:10015/osra_db"
