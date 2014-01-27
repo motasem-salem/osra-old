@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 ruby '2.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', "~> 4.0.2"
-gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
+gem "mongoid", "~> 3.0.0"
+#gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'devise'
 gem 'cancan'
 
