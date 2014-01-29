@@ -3,6 +3,7 @@ require 'roo'
 class OrphanList
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::AutoInc
 
   before_create :set_new_status
 

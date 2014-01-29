@@ -26,12 +26,10 @@ class OrphanListsController < ApplicationController
     @orphan_list = @partner.orphan_lists.find_by(osra_id: params[:id])
     # get_orphans(@orphan_list)
     imported_orphans = OrphanList.get_orphans(Roo::Spreadsheet.open(@orphan_list.uploaded_list.file.file))[:orphans]
-    imported_orphans.each do |o|
-      o.save
-    end
+    imported_orphans.each(&:save!)
     @orphan_list.update(:status => Settings.orphan_list_statuses[3])
 
-    redirect_to @partner, :notice => "List imported! with #{imported_orphans.size} orphans"
+    redirect_to @partner, :notice => "List imported successfully. #{imported_orphans.size} Orphans added."
   end
 
   # Use callbacks to share common setup or constraints between actions.

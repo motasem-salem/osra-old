@@ -1,17 +1,20 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', "~> 4.0.2"
-gem "mongoid", "~> 3.0.0"
-#gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
+gem 'rails', '~> 4.0.2'
+#gem "mongoid", "~> 3.1.0"
+gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'devise'
 gem 'cancan'
 
 gem 'mongo'
 gem 'roo'
+#gem "carrierwave", "~> 0.9.0"
 gem 'carrierwave'
+#gem "carrierwave-mongoid", "~> 0.6.3"
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
-gem 'mongoid_auto_increment'
+#gem 'mongoid_auto_increment'
+gem 'mongoid_auto_inc', '0.2.0', github: 'cblock/mongoid_auto_inc'
 
 
 # Use SCSS for stylesheets
@@ -25,7 +28,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -60,7 +63,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 # configurations
-gem "rails_config"
+gem 'rails_config'
 
 # html helper
 gem 'bootstrap-datepicker-rails'
