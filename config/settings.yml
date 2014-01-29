@@ -1,9 +1,20 @@
 countries:
   - Syria
 governantes:
-  Damascus: 11
+  Damascus & Rif Dimashq: 11
   Homs: 13
   Aleppo: 12
+  Hama: 14
+  Latakia: 15
+  Deir Al Zor: 16
+  Daraa: 17
+  Idlib: 18
+  Al Raqqah: 19
+  Al Hasakah: 20
+  Tartous: 21
+  Al Suwayada: 22
+  Al Quneitera: 23
+  Outside Syria: 29
 statuses:
   - Inactive
   - Active
