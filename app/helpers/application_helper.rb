@@ -1,9 +1,9 @@
 module ApplicationHelper
-  
+
   def governante_options
-    Settings.governantes.collect { |g| [t("governantes.#{g[0]}",:default => g[0]),g[1]] }
+    Settings.governantes.collect { |g| [t("governantes.#{g[0]}", :default => g[0]), g[1]] }
   end
-  
+
   def t_governante(code)
     g = Settings.governantes.to_hash.key(code)
     if g
@@ -12,9 +12,13 @@ module ApplicationHelper
       "Undefined governante code  -- #{code}"
     end
   end
-  
-  def status_options
-    Settings.statuses.collect { |s| [t("statuses.#{s}",:default => s),s] }
+
+  def t_status(status)
+    t("statuses.#{status}", :default => status)
   end
-  
+
+  def status_options
+    Settings.statuses.collect { |s| [t("statuses.#{s}", :default => s), s] }
+  end
+
 end

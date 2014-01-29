@@ -8,4 +8,6 @@ en:
         osra_id: ID
         partnership_start_date: Partnership Date
       orphan_list:
-         osra_id: List ID 
+         osra_id: List ID
+      organization:
+         osra_id: ID

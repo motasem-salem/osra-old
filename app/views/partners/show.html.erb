@@ -1,124 +1,124 @@
 <% model_class = Partner %>
 
 <div class="page-header">
-	<h1><%= t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1><%= t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
 <dl class="dl-horizontal">
 
-	<dt>
-		<strong><%= model_class.human_attribute_name(:osra_id) %>:</strong>
-	</dt>
-	<dd>
-		<%= @partner.osra_id %>
-	</dd>
-	<dt>
-		<strong><%= model_class.human_attribute_name(:name) %>:</strong>
-	</dt>
-	<dd>
-		<%= @partner.name %>
-	</dd>
-	<dt>
-		<strong><%= model_class.human_attribute_name(:governante) %>:</strong>
-	</dt>
-	<dd>
-		<%= t_governante @partner.governante %>
-	</dd>
-	<dt>
-		<strong><%= model_class.human_attribute_name(:region) %>:</strong>
-	</dt>
-	<dd>
-		<%= @partner.region %>
-	</dd>
-	<dt>
-		<strong><%= model_class.human_attribute_name(:partnership_start_date) %>:</strong>
-	</dt>
-	<dd>
-		<%= @partner.partnership_start_date %>
-	</dd>
-	<dt>
-		<strong><%= model_class.human_attribute_name(:status) %>:</strong>
-	</dt>
-	<dd>
-		<%= t "statuses.#{@partner.status}", :default => @partner.status %>
-	</dd>
+  <dt>
+    <strong><%= model_class.human_attribute_name(:osra_id) %>:</strong>
+  </dt>
+  <dd>
+    <%= @partner.osra_id %>
+  </dd>
+  <dt>
+    <strong><%= model_class.human_attribute_name(:name) %>:</strong>
+  </dt>
+  <dd>
+    <%= @partner.name %>
+  </dd>
+  <dt>
+    <strong><%= model_class.human_attribute_name(:governante) %>:</strong>
+  </dt>
+  <dd>
+    <%= t_governante @partner.governante %>
+  </dd>
+  <dt>
+    <strong><%= model_class.human_attribute_name(:region) %>:</strong>
+  </dt>
+  <dd>
+    <%= @partner.region %>
+  </dd>
+  <dt>
+    <strong><%= model_class.human_attribute_name(:partnership_start_date) %>:</strong>
+  </dt>
+  <dd>
+    <%= @partner.partnership_start_date %>
+  </dd>
+  <dt>
+    <strong><%= model_class.human_attribute_name(:status) %>:</strong>
+  </dt>
+  <dd>
+    <%= t "statuses.#{@partner.status}", :default => @partner.status %>
+  </dd>
 </dl>
 
 <% model_class = OrphanList %>
 <% if @partner.orphan_lists.size > 0 %>
 
-<h2>Orphan Lists</h2>
+    <h2>Orphan Lists</h2>
 
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th><%= model_class.human_attribute_name(:osra_id) %></th>
-			<th><%= model_class.human_attribute_name(:uploaded_list_filename) %></th>
-			<th><%= model_class.human_attribute_name(:created_at) %></th>
-			<th><%= t '.actions', :default => t("helpers.actions") %></th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @partner.orphan_lists.each do |list| %>
-		<tr>
-			<td><%= list.osra_id %></td>
-			<td><%= list.uploaded_list_filename %></td>
-			<td><%= l list.created_at %></td>
-			<td> <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-			partner_orphan_list_path(@partner,list),
-			:method => :delete,
-			:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-			:class => 'btn btn-mini btn-danger' %> </td>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th><%= model_class.human_attribute_name(:osra_id) %></th>
+        <th><%= model_class.human_attribute_name(:uploaded_list_filename) %></th>
+        <th><%= model_class.human_attribute_name(:created_at) %></th>
+        <th><%= t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @partner.orphan_lists.each do |list| %>
+          <tr>
+            <td><%= list.osra_id %></td>
+            <td><%= list.uploaded_list_filename %></td>
+            <td><%= l list.created_at %></td>
+            <td> <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                             partner_orphan_list_path(@partner, list),
+                             :method => :delete,
+                             :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))},
+                             :class => 'btn btn-mini btn-danger' %> </td>
 
-          <td> <%= link_to t('.import', :default => t("helpers.links.import")),
-                           import_partner_orphan_list_path(@partner,list),
-                           :method => :post,
-                           :class => 'btn btn-mini' %> </td>
+            <td> <%= link_to t('.import', :default => t("helpers.links.import")),
+                             import_partner_orphan_list_path(@partner, list),
+                             :method => :post,
+                             :class => 'btn btn-mini' %> </td>
 
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
 <% else %>
-<h2>This partner does not have any orphan lists</h2>
+    <h2>This partner does not have any orphan lists</h2>
 <% end %>
 
 <% model_class = Partner %>
 
 <div id="upload" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
-	<%= form_for [@partner, OrphanList.new]  do |f|  %>
-	<div class="modal-header">
+  <%= form_for [@partner, OrphanList.new] do |f| %>
+      <div class="modal-header">
 
-		<h3 id="myModalLabel">Upload a new orphan list</h3>
-	</div>
-	<div class="modal-body">
+        <h3 id="myModalLabel">Upload a new orphan list</h3>
+      </div>
+      <div class="modal-body">
 
-		<p>
-			<%= f.file_field :uploaded_list %>
-		</p>
+        <p>
+          <%= f.file_field :uploaded_list, accept: 'application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' %>
+        </p>
 
-	</div>
-	<div class="modal-footer">
-		<%= f.submit "Import List", :class => 'btn btn-primary'%>
-		<button class="btn" data-dismiss="modal" aria-hidden="true">
-			Cancel
-		</button>
-	</div>
-	<% end %>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Import List", :class => 'btn btn-primary' %>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">
+          Cancel
+        </button>
+      </div>
+  <% end %>
 </div>
 
 <div class="form-actions">
-	<%= link_to t('.back', :default => t("helpers.links.back")),
-	partners_path, :class => 'btn'  %>
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              partners_path, :class => 'btn' %>
 
-	<a href="#upload" role="button" class="btn" data-toggle="modal">Upload</a>
+  <a href="#upload" role="button" class="btn" data-toggle="modal">Upload</a>
 
-	<%= link_to t('.edit', :default => t("helpers.links.edit")),
-	edit_partner_path(@partner), :class => 'btn' %>
-	<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-	partner_path(@partner),
-	:method => 'delete',
-	:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-	:class => 'btn btn-danger' %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_partner_path(@partner), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              partner_path(@partner),
+              :method => 'delete',
+              :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))},
+              :class => 'btn btn-danger' %>
 </div>
