@@ -4,7 +4,7 @@ class Orphan
 
   field :name, type: String
   field :father_name, type: String
-  field :father_is_martyr, type: String
+  field :father_is_martyr, type: Boolean
   field :father_occupation, type: String
   field :father_place_of_death, type: String
   field :father_cause_of_death, type: String
