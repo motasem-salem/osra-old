@@ -24,6 +24,20 @@ body.ltr {
   clear: left;
 }
 
+.rtl td
+{
+    text-align:right;
+}
+
+.rtl th
+{
+    text-align:right;
+}
+
 dt, dd{
   min-height: 20px;
+}
+
+.field_with_errors {
+  color:red;
 }

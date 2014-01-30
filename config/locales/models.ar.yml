@@ -2,12 +2,36 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ar:
+  governantes:
+    Damascus & Rif Dimashq: دمشق و ريف دمشق
+    Homs: حمص
+    Aleppo: حلب
+    Hama: حماة
+    Latakia: اللاذقية
+    Deir Al Zor: دير الزور
+    Daraa: درعا
+    Idlib: إدلب
+    Al Raqqah: الرقة
+    Al Hasakah: الحسكة
+    Tartous: طرطوس
+    Al Suwayada: السويداء
+    Al Quneitera: القنيطرة
+    Outside Syria: خارج سوريا
+  statuses:
+    Inactive: غير مفعل
+    Active: مفعل
+    On Hold: معلق
+    Under Revision: تحت المراجعة
   mongoid:
     models:
       partner: شريك
     attributes:
       partner:
-        osra_id: رقم
+        osra_id: الرقم
         name: الإسم
-        governante: المحافظة 
+        governante: المحافظة
+        region: المنطقة
         partnership_start_date: تاريخ الشراكة
+        status: الحالة
+      orphan_list:
+        osra_id: رقم القائمة

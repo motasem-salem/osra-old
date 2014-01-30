@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h1><%= t '.title', :default => 'Orphan List Validation Results:' %></h1>
+</div>
+
+<% if @valid %>
+
+    <%= render :partial => 'orphans' %>
+
+<% else %>
+
+    <%= render :partial => 'errors' %>
+
+<% end %>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+            partner_path(@partner),
+            :class => 'btn' %>

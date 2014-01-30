@@ -2,14 +2,29 @@ class Partner
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::MultiParameterAttributes
+  include Mongoid::AutoInc
 
-  field :name, type: String
+  after_create :set_osra_id
+
+  field :name
   field :governante, type: Integer
-  field :region, type: String
+  field :region
   field :partnership_start_date, type: Date
-  field :status, type: String
-  field :osra_id, type: Integer
+  field :status
+  field :osra_id
 
-  validates_presence_of :name, :partnership_start_date
-#  validates :partnership_start_date, presence: true
+  auto_increment :seq, :scope => :governante
+
+  validates_presence_of :name, :governante, :partnership_start_date, :status
+
+  embeds_many :orphan_lists
+
+  def set_osra_id
+    update!(:osra_id => '%d%03d' % [governante, seq])
+  end
+
+  def to_param
+    osra_id.to_s
+  end
+
 end

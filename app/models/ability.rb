@@ -9,11 +9,11 @@ class Ability
     if user.role? :super_admin
       can :manage, :all
     elsif user.role? :organization_admin
-      can :manage, [ Organization ]
+      can :manage, [Organization]
     elsif user.role? :partner_admin
-      can :manage, [ Partner ]
+      can :manage, [Partner]
     elsif user.role? :sponsor_admin
-      can :manage, [ Sponsor ]
+      can :manage, [Sponsor]
     end
 
     #
