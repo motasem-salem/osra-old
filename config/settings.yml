@@ -56,26 +56,26 @@ orphan_list:
         column: D
         mandatory: true
         type: Boolean
-#      - field: father_occupation   
-#        column: E
-#        mandatory: false
-#        type: String
-#      - field: father_place_of_death   
-#        column: F
-#        mandatory: false
-#        type: String
-#      - field: father_cause_of_death   
-#        column: G
-#        mandatory: false
-#        type: String
-#      - field: father_date_of_death   
-#        column: H
-#        mandatory: true
-#        type: Date
-##      - field: mother_name   
-#        column: I
-#        mandatory: true   
-#        type: String
+      - field: father_occupation
+        column: E
+        mandatory: false
+        type: String
+      - field: father_place_of_death
+        column: F
+        mandatory: false
+        type: String
+      - field: father_cause_of_death
+        column: G
+        mandatory: false
+        type: String
+      - field: father_date_of_death
+        column: H
+        mandatory: true
+        type: Date
+      - field: mother_name
+        column: I
+        mandatory: true
+        type: String
 #      - field: mother_alive   
 #        column: J
 #        mandatory: true   

@@ -25,7 +25,7 @@ class PartnersController < ApplicationController
   # POST /partners.json
   def create
     @partner = Partner.new(partner_params)
-    
+
     respond_to do |format|
       if @partner.save
         format.html { redirect_to @partner, notice: 'Partner was successfully created.' }
@@ -60,20 +60,20 @@ class PartnersController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   # GET /partners/1/upload
   def upload
     set_partner
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_partner
-      @partner = Partner.find_by(osra_id: params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_partner
+    @partner = Partner.find_by(osra_id: params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def partner_params
-      params.require(:partner).permit(:name, :governante, :region, :partnership_start_date, :status, :osra_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def partner_params
+    params.require(:partner).permit(:name, :governante, :region, :partnership_start_date, :status, :osra_id)
+  end
 end

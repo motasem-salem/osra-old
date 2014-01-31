@@ -22,64 +22,6 @@ class OrphanList
     self.status = Settings.orphan_list_statuses[0]
   end
 
-  def self.add_validation_error(reference, error)
-    @validation_errors.push ({:ref => reference, :error => error})
-  end
-
-  def self.get_doc(file)
-    begin
-      file.original_filename =~ /[.](.+)\z/
-      case $1
-        when 'xls'
-          list = Roo::Spreadsheet.open(file.path, extension: :xls)
-        when 'xlsx'
-          list = Roo::Spreadsheet.open(file.path, extension: :xlsx)
-        else
-          add_validation_error('Uploaded file extension', 'Invalid file extension. Please upload only .xls or .xlsx files.')
-          return false
-      end
-    rescue
-      add_validation_error('Uploaded file', 'Invalid file format. Please ensure the file is a proper Excel file.')
-      return false
-    end
-    list
-  end
-
-  def self.validate(file)
-    @imported_orphans = []
-    @validation_errors = []
-    results = {:orphans => @imported_orphans, :errors => @validation_errors}
-
-    list = get_doc(file)
-    if !list
-      return results
-    end
-    get_orphans(list)
-  end
-
-  def self.get_orphans(list)
-    @imported_orphans = []
-    @validation_errors = []
-
-    column_defs = Settings.orphan_list.import.columns
-    Settings.orphan_list.import.first_row.upto(list.last_row) do |record|
-      valid = true
-      fields = {}
-      column_defs.each { |col|
-        case col.type
-          when 'String'
-            fields[col.field] = list.cell(record, col.column)
-          when 'Boolean'
-            fields[col.field] = list.cell(record, col.column) == 'Y'
-        end
-      }
-      if valid
-        o = Orphan.new(fields)
-        @imported_orphans.push(o)
-      end
-    end
 
 
-    {:orphans => @imported_orphans, :errors => @validation_errors}
-  end
 end

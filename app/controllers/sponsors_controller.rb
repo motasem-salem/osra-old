@@ -62,13 +62,13 @@ class SponsorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_sponsor
-      @sponsor = Sponsor.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_sponsor
+    @sponsor = Sponsor.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def sponsor_params
-      params.require(:sponsor).permit(:name, :status, :type, :organization_id, :gender, :address, :country, :partnership_start_date, :email, :contact_1, :contact_2, :additional_info, :osra_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def sponsor_params
+    params.require(:sponsor).permit(:name, :status, :type, :organization_id, :gender, :address, :country, :partnership_start_date, :email, :contact_1, :contact_2, :additional_info, :osra_id)
+  end
 end
