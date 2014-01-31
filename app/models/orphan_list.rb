@@ -60,31 +60,26 @@ class OrphanList
   def self.get_orphans(list)
     @imported_orphans = []
     @validation_errors = []
-    columns = Settings.orphan_list.import.column_order.reduce ({}) do |h, e|
-      h.merge e
-    end
+
+    column_defs = Settings.orphan_list.import.columns
     Settings.orphan_list.import.first_row.upto(list.last_row) do |record|
-      o = Orphan.new
-      columns.each_pair { |k, v|
-        puts "#{k}:"
-        puts Orphan.fields[k.to_s].type.name
-        case Orphan.fields["#{k}"].type.name
-          when Integer
-            puts 'found an Integer => ' + list.cell(record, v).to_i
-          when 'Date'
-            puts 'found a date'
-          when 'Boolean'
-            puts 'found a Boolean =>' + list.cell(record, v)
+      valid = true
+      fields = {}
+      column_defs.each { |col|
+        case col.type
           when 'String'
-            puts 'found a String =>' + list.cell(record, v)
-          else
-            puts 'I''m confused now!!!'
+            fields[col.field] = list.cell(record, col.column)
+          when 'Boolean'
+            fields[col.field] = list.cell(record, col.column) == 'Y'
         end
-        #   o.send("#{k}=", list.cell(record, v))
       }
-      #  o = Orphan.new(:name => list.cell(record, Settings.orphan_list.import.name_col))
-      @imported_orphans.push (o)
+      if valid
+        o = Orphan.new(fields)
+        @imported_orphans.push(o)
+      end
     end
+
+
     {:orphans => @imported_orphans, :errors => @validation_errors}
   end
 end

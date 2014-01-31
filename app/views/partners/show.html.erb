@@ -40,7 +40,7 @@
     <strong><%= model_class.human_attribute_name(:status) %>:</strong>
   </dt>
   <dd>
-    <%= t "statuses.#{@partner.status}", :default => @partner.status %>
+    <%= t_status @partner.status %>
   </dd>
 </dl>
 

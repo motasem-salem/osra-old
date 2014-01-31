@@ -43,38 +43,136 @@ orphan_list:
       -
       -
     first_row: 4
-    first_column: 2
-    column_order:
-      - name: B
-      - father_name: C
-      - father_is_martyr: D
-      - father_occupation: E
-      - father_place_of_death: F
-      - father_cause_of_death: G
-      - father_date_of_death: H
-#      - mother_name:
-#      - mother_alive:
-#      - date_of_birth:
-#      - gender:
-#      - health_status:
-#      - schooling_status:
-#      - goes_to_school:
-#      - guardian_name:
-#      - guardian_relationship:
-#      - guardian_id:
-#      - original_address_gov:
-#      - original_address_city:
-#      - original_address_neighborhood:
-#      - original_address_street:
-#      - original_address_details:
-#      - current_address_gov:
-#      - current_address_city:
-#      - current_address_neighborhood:
-#      - current_address_street:
-#      - current_address_details:
-#      - contact_number:
-#      - alt_contact_number:
-#      - sponsored_by_another_org:
-#      - another_org_sponsorship_details:
-#      - minor_siblings_count:
-#      - comments:
+    columns:
+      - field: name   
+        column: B   
+        mandatory: true   
+        type: String
+      - field: father_name   
+        column: C
+        mandatory: true   
+        type: String
+      - field: father_is_martyr
+        column: D
+        mandatory: true
+        type: Boolean
+#      - field: father_occupation   
+#        column: E
+#        mandatory: false
+#        type: String
+#      - field: father_place_of_death   
+#        column: F
+#        mandatory: false
+#        type: String
+#      - field: father_cause_of_death   
+#        column: G
+#        mandatory: false
+#        type: String
+#      - field: father_date_of_death   
+#        column: H
+#        mandatory: true
+#        type: Date
+##      - field: mother_name   
+#        column: I
+#        mandatory: true   
+#        type: String
+#      - field: mother_alive   
+#        column: J
+#        mandatory: true   
+#        type: String
+#      - field: date_of_birth   
+#        column: K
+#        mandatory: true   
+#        type: String
+#      - field: gender   
+#        column: L
+#        mandatory: true   
+#        type: String
+#      - field: health_status   
+#        column: M
+#        mandatory: true   
+#        type: String
+#      - field: schooling_status   
+#        column: N
+#        mandatory: true   
+#        type: String
+#      - field: goes_to_school   
+#        column: O
+#        mandatory: true   
+#        type: String
+#      - field: guardian_name   
+#        column: Q
+#        mandatory: true   
+#        type: String
+#      - field: guardian_relationship   
+#        column: R
+#        mandatory: true   
+#        type: String
+#      - field: guardian_id   
+#        column: S
+#        mandatory: true   
+#        type: String
+#      - field: original_address_gov   
+#        column: T
+#        mandatory: true   
+#        type: String
+#      - field: original_address_city   
+#        column: U
+#        mandatory: true   
+#        type: String
+#      - field: original_address_neighborhood   
+#        column: V
+#        mandatory: true   
+#        type: String
+#      - field: original_address_street   
+#        column: W
+#        mandatory: true   
+#        type: String
+#      - field: original_address_details   
+#        column: X
+#        mandatory: true   
+#        type: String
+#      - field: current_address_gov   
+#        column: Y
+#        mandatory: true   
+#        type: String
+#      - field: current_address_city   
+#        column: Z
+#        mandatory: true   
+#        type: String
+#      - field: current_address_neighborhood   
+#        column: AA
+#        mandatory: true   
+#        type: String
+#      - field: current_address_street   
+#        column: AB
+#        mandatory: true   
+#        type: String
+#      - field: current_address_details   
+#        column: AC
+#        mandatory: true   
+#        type: String
+#      - field: contact_number   
+#        column: AD
+#        mandatory: true   
+#        type: String
+#      - field: alt_contact_number   
+#        column: AE
+#        mandatory: true   
+#        type: String
+#      - field: sponsored_by_another_org   
+#        column: AF
+#        mandatory: true   
+#        type: String
+#      - field: another_org_sponsorship_details   
+#        column: AG
+#        mandatory: true   
+#        type: String
+#      - field: minor_siblings_count   
+#        column: AH
+#        mandatory: true   
+#        type: String
+#      - field: comments   
+#        column: AL
+#        mandatory: true   
+#        type: String
