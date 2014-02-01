@@ -2,18 +2,21 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :lockable, :timeoutable
+  devise :database_authenticatable,
+         :rememberable, :trackable, :lockable, :timeoutable
+
+  # Virtual attribute for authenticating by either username or email
+  # This is in addition to a real persisted field like 'username'
 
   ## Database authenticatable
   field :name, :type => String, :default => ""
   field :username, :type => String, :default => ""
-  field :email, :type => String, :default => ""
+#  field :email, :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
 
   ## Recoverable
-  field :reset_password_token, :type => String
-  field :reset_password_sent_at, :type => Time
+#  field :reset_password_token, :type => String
+#  field :reset_password_sent_at, :type => Time
 
   ## Rememberable
   field :remember_created_at, :type => Time

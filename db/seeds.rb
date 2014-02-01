@@ -7,4 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
-User.create email: "admin@admin.com", password: "adminadmin", password_confirmation: "adminadmin"
+User.create name: 'Super User', username: 'admin', password: 'osra', password_confirmation: 'osra'
+User.create name: 'User One', username: 'user1', password: 'osra', password_confirmation: 'osra'
+User.create name: 'User Two', username: 'user2', password: 'osra', password_confirmation: 'osra'
+User.create name: 'Orphan Admin', username: 'orphan_admin', password: 'osra', password_confirmation: 'osra'
+User.create name: 'Sponsor Admin', username: 'sponsor_admin', password: 'osra', password_confirmation: 'osra'
