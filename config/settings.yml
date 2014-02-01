@@ -36,12 +36,6 @@ orphan_list:
     - Pending
     - Imported
   import:
-    file_extensions:
-      - xls
-      - xlsx
-    content_types:
-      -
-      -
     first_row: 4
     columns:
       - field: name   
@@ -76,14 +70,14 @@ orphan_list:
         column: I
         mandatory: true
         type: String
-#      - field: mother_alive   
-#        column: J
-#        mandatory: true   
-#        type: String
-#      - field: date_of_birth   
-#        column: K
-#        mandatory: true   
-#        type: String
+      - field: mother_alive
+        column: J
+        mandatory: true
+        type: Boolean
+      - field: date_of_birth
+        column: K
+        mandatory: true
+        type: Date
 #      - field: gender   
 #        column: L
 #        mandatory: true   
@@ -152,27 +146,31 @@ orphan_list:
 #        column: AC
 #        mandatory: true   
 #        type: String
-#      - field: contact_number   
-#        column: AD
-#        mandatory: true   
-#        type: String
-#      - field: alt_contact_number   
-#        column: AE
-#        mandatory: true   
-#        type: String
-#      - field: sponsored_by_another_org   
-#        column: AF
-#        mandatory: true   
-#        type: String
-#      - field: another_org_sponsorship_details   
-#        column: AG
-#        mandatory: true   
-#        type: String
-#      - field: minor_siblings_count   
-#        column: AH
-#        mandatory: true   
-#        type: String
-#      - field: comments   
-#        column: AL
-#        mandatory: true   
-#        type: String
+      - field: contact_number
+        column: AC
+        mandatory: true
+        type: String
+      - field: alt_contact_number
+        column: AD
+        mandatory: false
+        type: String
+      - field: sponsored_by_another_org
+        column: AE
+        mandatory: true
+        type: Boolean
+      - field: another_org_sponsorship_details
+        column: AF
+        mandatory: false
+        type: String
+      - field: minor_siblings_count
+        column: AG
+        mandatory: true
+        type: Integer
+      - field: sponsored_minor_siblings_count
+        column: AH
+        mandatory: false
+        type: Integer
+      - field: comments
+        column: AL
+        mandatory: false
+        type: String

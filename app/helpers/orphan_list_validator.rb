@@ -57,7 +57,9 @@ class OrphanListValidator
               when 'Boolean'
                 fields[col.field] = @doc.cell(record, col.column) == 'Y'
               when 'Date'
-              #  fields[col.field] = @doc.cell(record, col.column)
+                fields[col.field] = Date.parse @doc.cell(record, col.column)
+              when 'Integer'
+                fields[col.field] = @doc.cell(record, col.column).to_i
               else
                 add_validation_error('Import configuration', "Invalid data type: #{col.type} defined for field: #{col.field}. Please check import settings.")
             end

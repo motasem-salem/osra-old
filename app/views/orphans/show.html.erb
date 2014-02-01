@@ -1,6 +1,6 @@
-<%- model_class = Orphan -%>
+<% model_class = Orphan %>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1><%= t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -64,18 +64,22 @@
   <dd><%= @orphan.sponsored_by_another_org %></dd>
   <dt><strong><%= model_class.human_attribute_name(:another_org_sponsorship_details) %>:</strong></dt>
   <dd><%= @orphan.another_org_sponsorship_details %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:minor_siblings_count) %>:</strong></dt>
+  <dd><%= @orphan.minor_siblings_count %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sponsored_minor_siblings_count) %>:</strong></dt>
+  <dd><%= @orphan.sponsored_minor_siblings_count %></dd>
   <dt><strong><%= model_class.human_attribute_name(:comments) %>:</strong></dt>
   <dd><%= @orphan.comments %></dd>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              orphans_path, :class => 'btn'  %>
+              orphans_path, :class => 'btn' %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_orphan_path(@orphan), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               orphan_path(@orphan),
               :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))},
               :class => 'btn btn-danger' %>
 </div>
