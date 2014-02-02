@@ -62,9 +62,9 @@ class PartnersController < ApplicationController
   end
 
   # GET /partners/1/upload
-  def upload
-    set_partner
-  end
+#  def upload
+#    set_partner
+#  end
 
   private
   # Use callbacks to share common setup or constraints between actions.
@@ -74,6 +74,6 @@ class PartnersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def partner_params
-    params.require(:partner).permit(:name, :governante, :region, :partnership_start_date, :status, :osra_id)
+    params.require(:partner).permit(:name, :governante, :region, :partnership_start_date, :status)
   end
 end

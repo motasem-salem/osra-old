@@ -9,88 +9,50 @@
     <th><%= model_class.human_attribute_name(:name) %></th>
     <th><%= model_class.human_attribute_name(:father_name) %></th>
     <th><%= model_class.human_attribute_name(:father_is_martyr) %></th>
-    <th><%= model_class.human_attribute_name(:father_occupation) %></th>
-    <th><%= model_class.human_attribute_name(:father_place_of_death) %></th>
-    <th><%= model_class.human_attribute_name(:father_cause_of_death) %></th>
-    <th><%= model_class.human_attribute_name(:father_date_of_death) %></th>
+    <th><%= model_class.human_attribute_name(:status) %></th>
+
     <th><%= model_class.human_attribute_name(:mother_name) %></th>
     <th><%= model_class.human_attribute_name(:mother_alive) %></th>
     <th><%= model_class.human_attribute_name(:gender) %></th>
-    <th><%= model_class.human_attribute_name(:health_status) %></th>
-    <th><%= model_class.human_attribute_name(:schooling_status) %></th>
-    <th><%= model_class.human_attribute_name(:goes_to_school) %></th>
-    <th><%= model_class.human_attribute_name(:guardian_name) %></th>
-    <th><%= model_class.human_attribute_name(:guardian_relationship) %></th>
-    <th><%= model_class.human_attribute_name(:guardian_id) %></th>
+    <th><%= model_class.human_attribute_name(:date_of_birth) %></th>
+
     <th><%= model_class.human_attribute_name(:original_address_gov) %></th>
     <th><%= model_class.human_attribute_name(:original_address_city) %></th>
-    <th><%= model_class.human_attribute_name(:original_address_neighborhood) %></th>
-    <th><%= model_class.human_attribute_name(:original_address_street) %></th>
-    <th><%= model_class.human_attribute_name(:original_address_details) %></th>
+
     <th><%= model_class.human_attribute_name(:current_address_gov) %></th>
     <th><%= model_class.human_attribute_name(:current_address_city) %></th>
-    <th><%= model_class.human_attribute_name(:current_address_neighborhood) %></th>
-    <th><%= model_class.human_attribute_name(:current_address_street) %></th>
-    <th><%= model_class.human_attribute_name(:current_address_details) %></th>
+
     <th><%= model_class.human_attribute_name(:contact_number) %></th>
-    <th><%= model_class.human_attribute_name(:alt_contact_number) %></th>
+
     <th><%= model_class.human_attribute_name(:sponsored_by_another_org) %></th>
-    <th><%= model_class.human_attribute_name(:another_org_sponsorship_details) %></th>
-    <th><%= model_class.human_attribute_name(:comments) %></th>
-    <th><%= model_class.human_attribute_name(:created_at) %></th>
-    <th><%= t '.actions', :default => t("helpers.actions") %></th>
+
   </tr>
   </thead>
   <tbody>
   <% @orphans.each do |orphan| %>
       <tr>
-        <td><%= link_to orphan.id, orphan_path(orphan) %></td>
+        <td><%= link_to orphan.osra_id, orphan_path(orphan) %></td>
         <td><%= orphan.name %></td>
         <td><%= orphan.father_name %></td>
         <td><%= orphan.father_is_martyr %></td>
-        <td><%= orphan.father_occupation %></td>
-        <td><%= orphan.father_place_of_death %></td>
-        <td><%= orphan.father_cause_of_death %></td>
-        <td><%= orphan.father_date_of_death %></td>
+        <td><%= t_status orphan.status %></td>
+
         <td><%= orphan.mother_name %></td>
         <td><%= orphan.mother_alive %></td>
         <td><%= orphan.gender %></td>
-        <td><%= orphan.health_status %></td>
-        <td><%= orphan.schooling_status %></td>
-        <td><%= orphan.goes_to_school %></td>
-        <td><%= orphan.guardian_name %></td>
-        <td><%= orphan.guardian_relationship %></td>
-        <td><%= orphan.guardian_id %></td>
-        <td><%= orphan.original_address_gov %></td>
+        <td><%= orphan.date_of_birth %></td>
+
+        <td><%= t_governante orphan.original_address_gov %></td>
         <td><%= orphan.original_address_city %></td>
-        <td><%= orphan.original_address_neighborhood %></td>
-        <td><%= orphan.original_address_street %></td>
-        <td><%= orphan.original_address_details %></td>
-        <td><%= orphan.current_address_gov %></td>
+
+        <td><%= t_governante orphan.current_address_gov %></td>
         <td><%= orphan.current_address_city %></td>
-        <td><%= orphan.current_address_neighborhood %></td>
-        <td><%= orphan.current_address_street %></td>
-        <td><%= orphan.current_address_details %></td>
+
         <td><%= orphan.contact_number %></td>
-        <td><%= orphan.alt_contact_number %></td>
+
         <td><%= orphan.sponsored_by_another_org %></td>
-        <td><%= orphan.another_org_sponsorship_details %></td>
-        <td><%= orphan.comments %></td>
-        <td><%= l orphan.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_orphan_path(orphan), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      orphan_path(orphan),
-                      :method => :delete,
-                      :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))},
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
+
       </tr>
   <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_orphan_path,
-            :class => 'btn btn-primary' %>

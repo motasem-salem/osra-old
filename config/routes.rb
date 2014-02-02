@@ -1,13 +1,15 @@
 Osra::Application.routes.draw do
 
   post '/partners/:partner_id/orphan_lists/:id/import' => 'orphan_lists#import', :as => :import_partner_orphan_list
-  resources :partners do
+  resources :partners, :except => [:destroy] do
     resources :orphan_lists
   end
 
   devise_for :users, :skip => [:registrations]
 
-  resources :orphans, :sponsors, :organizations
+  resources :sponsors, :organizations
+
+  resources :orphans , :except => [:new, :create, :destroy]
 
   root 'main#index'
   get '/locale/:id' => 'main#set_locale', :as => :set_locale
