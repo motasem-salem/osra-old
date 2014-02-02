@@ -6,12 +6,14 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:osra_id) %>:</strong></dt>
   <dd><%= @orphan.osra_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= @orphan.status %></dd>
-  <hr>
-  <h4>Personal Details:</h4>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @orphan.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @orphan.status %></dd>
+
+  <hr>
+  <h4>Parents' Information:</h4>
+
   <dt><strong><%= model_class.human_attribute_name(:father_name) %>:</strong></dt>
   <dd><%= @orphan.father_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:father_is_martyr) %>:</strong></dt>
@@ -26,6 +28,10 @@
   <dd><%= @orphan.father_date_of_death %></dd>
   <dt><strong><%= model_class.human_attribute_name(:mother_name) %>:</strong></dt>
   <dd><%= @orphan.mother_name %></dd>
+
+  <hr>
+  <h4>Orphan Information:</h4>
+
   <dt><strong><%= model_class.human_attribute_name(:date_of_birth) %>:</strong></dt>
   <dd><%= @orphan.date_of_birth %></dd>
   <dt><strong><%= model_class.human_attribute_name(:gender) %>:</strong></dt>
@@ -42,8 +48,10 @@
   <dd><%= @orphan.guardian_relationship %></dd>
   <dt><strong><%= model_class.human_attribute_name(:guardian_id) %>:</strong></dt>
   <dd><%= @orphan.guardian_id %></dd>
+
   <hr>
   <h4>Original Address:</h4>
+
   <dt><strong><%= model_class.human_attribute_name(:original_address_gov) %>:</strong></dt>
   <dd><%= t_governante @orphan.original_address_gov %></dd>
   <dt><strong><%= model_class.human_attribute_name(:original_address_city) %>:</strong></dt>
@@ -54,8 +62,10 @@
   <dd><%= @orphan.original_address_street %></dd>
   <dt><strong><%= model_class.human_attribute_name(:original_address_details) %>:</strong></dt>
   <dd><%= @orphan.original_address_details %></dd>
+
   <hr>
   <h4>Current Address:</h4>
+
   <dt><strong><%= model_class.human_attribute_name(:current_address_gov) %>:</strong></dt>
   <dd><%= @orphan.current_address_gov %></dd>
   <dt><strong><%= model_class.human_attribute_name(:current_address_city) %>:</strong></dt>
@@ -66,13 +76,14 @@
   <dd><%= @orphan.current_address_street %></dd>
   <dt><strong><%= model_class.human_attribute_name(:current_address_details) %>:</strong></dt>
   <dd><%= @orphan.current_address_details %></dd>
-  <hr>
-  <h4>Contact Details:</h4>
   <dt><strong><%= model_class.human_attribute_name(:contact_number) %>:</strong></dt>
   <dd><%= @orphan.contact_number %></dd>
   <dt><strong><%= model_class.human_attribute_name(:alt_contact_number) %>:</strong></dt>
   <dd><%= @orphan.alt_contact_number %></dd>
+
   <hr>
+  <h4>Additional Information:</h4>
+
   <dt><strong><%= model_class.human_attribute_name(:sponsored_by_another_org) %>:</strong></dt>
   <dd><%= @orphan.sponsored_by_another_org %></dd>
   <dt><strong><%= model_class.human_attribute_name(:another_org_sponsorship_details) %>:</strong></dt>

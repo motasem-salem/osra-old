@@ -40,7 +40,7 @@ class Orphan
   field :sponsored_minor_siblings_count, type: Integer
   field :comments
 
-  field :status, default: Settings.orphan_list_statuses[0]
+  field :status, default: Settings.orphan_list.statuses[0]
 
   field :osra_id
 

@@ -1,5 +1,5 @@
 class OrphanListsController < ApplicationController
-  before_action :set_partner, only: [:import, :create, :show, :destroy]
+  before_action :set_partner, only: [:create, :import, :destroy]
 
   def create
     v = OrphanListValidator.new
@@ -22,9 +22,9 @@ class OrphanListsController < ApplicationController
     end
   end
 
-  def show
-    import
-  end
+ # def show
+ #   import
+ # end
 
   def import
     @orphan_list = @partner.orphan_lists.find_by(osra_id: params[:id])
@@ -33,7 +33,7 @@ class OrphanListsController < ApplicationController
     v.doc = Roo::Spreadsheet.open(@orphan_list.uploaded_list.file.file)
     v.valid?
     v.extracted_orphans.each(&:save!)
-    @orphan_list.update(:status => Settings.orphan_list_statuses[3])
+    @orphan_list.update(:status => Settings.orphan_list.statuses[1])
 
     redirect_to @partner, :notice => "List imported successfully. #{v.extracted_orphans.size} Orphans added."
   end

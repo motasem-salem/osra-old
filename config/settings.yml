@@ -20,11 +20,6 @@ statuses:
   - Active
   - On Hold
   - Under Revision
-orphan_list_statuses:
-  - New
-  - Valid
-  - Invalid
-  - Imported
 gender:
   - Male
   - Female
@@ -33,7 +28,7 @@ sponsor_type:
   - Organization
 orphan_list:
   statuses:
-    - Pending
+    - Validated
     - Imported
   import:
     first_row: 4
@@ -82,70 +77,70 @@ orphan_list:
 #        column: L
 #        mandatory: true   
 #        type: String
-#      - field: health_status   
-#        column: M
-#        mandatory: true   
-#        type: String
-#      - field: schooling_status   
-#        column: N
-#        mandatory: true   
-#        type: String
-#      - field: goes_to_school   
-#        column: O
-#        mandatory: true   
-#        type: String
-#      - field: guardian_name   
-#        column: Q
-#        mandatory: true   
-#        type: String
-#      - field: guardian_relationship   
-#        column: R
-#        mandatory: true   
-#        type: String
-#      - field: guardian_id   
-#        column: S
-#        mandatory: true   
-#        type: String
-#      - field: original_address_gov   
+      - field: health_status
+        column: M
+        mandatory: false
+        type: String
+      - field: schooling_status
+        column: N
+        mandatory: false
+        type: String
+      - field: goes_to_school
+        column: O
+        mandatory: false
+        type: String
+      - field: guardian_name
+        column: Q
+        mandatory: true
+        type: String
+      - field: guardian_relationship
+        column: R
+        mandatory: true
+        type: String
+      - field: guardian_id
+        column: S
+        mandatory: true
+        type: Integer
+#      - field: original_address_gov
 #        column: T
-#        mandatory: true   
+#        mandatory: true
 #        type: String
-#      - field: original_address_city   
-#        column: U
-#        mandatory: true   
-#        type: String
-#      - field: original_address_neighborhood   
-#        column: V
-#        mandatory: true   
-#        type: String
-#      - field: original_address_street   
-#        column: W
-#        mandatory: true   
-#        type: String
-#      - field: original_address_details   
-#        column: X
-#        mandatory: true   
-#        type: String
-#      - field: current_address_gov   
+      - field: original_address_city
+        column: U
+        mandatory: true
+        type: String
+      - field: original_address_neighborhood
+        column: V
+        mandatory: false
+        type: String
+      - field: original_address_street
+        column: W
+        mandatory: false
+        type: String
+      - field: original_address_details
+        column: X
+        mandatory: false
+        type: String
+#      - field: current_address_gov
 #        column: Y
-#        mandatory: true   
+#        mandatory: true
 #        type: String
-#      - field: current_address_city   
-#        column: Z
-#        mandatory: true   
-#        type: String
-#      - field: current_address_neighborhood   
-#        column: AA
-#        mandatory: true   
-#        type: String
-#      - field: current_address_street   
-#        column: AB
-#        mandatory: true   
-#        type: String
-#      - field: current_address_details   
-#        column: AC
-#        mandatory: true   
-#        type: String
+      - field: current_address_city
+        column: Z
+        mandatory: false
+        type: String
+      - field: current_address_neighborhood
+        column: AA
+        mandatory: false
+        type: String
+      - field: current_address_street
+        column: AB
+        mandatory: false
+        type: String
+      - field: current_address_details
+        column: AC
+        mandatory: false
+        type: String
       - field: contact_number
         column: AC
         mandatory: true

@@ -1,11 +1,9 @@
-require 'roo'
-
 class OrphanList
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::AutoInc
 
-  field :status, default: Settings.orphan_list_statuses[0]
+  field :status, default: Settings.orphan_list.statuses[0]
   auto_increment :osra_id
 
   mount_uploader :uploaded_list, OrphanListUploader

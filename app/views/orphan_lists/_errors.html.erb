@@ -1,3 +1,16 @@
-ERRRORRRSSS
-
-<%= @validation_errors %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Reference</th>
+    <th>Validation Error</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @validation_errors.each do |error| %>
+      <tr>
+        <td><%= error[:ref] %></td>
+        <td><%= error[:error] %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -22,6 +22,8 @@ ar:
     Active: مفعل
     On Hold: معلق
     Under Revision: تحت المراجعة
+    Uploaded: تم الرفع
+    Imported: تم التخزين
   mongoid:
     models:
       partner: شريك
