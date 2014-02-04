@@ -53,7 +53,7 @@
   <h4>Original Address:</h4>
 
   <dt><strong><%= model_class.human_attribute_name(:original_address_gov) %>:</strong></dt>
-  <dd><%= t_governante @orphan.original_address_gov %></dd>
+  <dd><%= t_governorate @orphan.original_address_gov %></dd>
   <dt><strong><%= model_class.human_attribute_name(:original_address_city) %>:</strong></dt>
   <dd><%= @orphan.original_address_city %></dd>
   <dt><strong><%= model_class.human_attribute_name(:original_address_neighborhood) %>:</strong></dt>
@@ -67,7 +67,7 @@
   <h4>Current Address:</h4>
 
   <dt><strong><%= model_class.human_attribute_name(:current_address_gov) %>:</strong></dt>
-  <dd><%= @orphan.current_address_gov %></dd>
+  <dd><%= t_governorate @orphan.current_address_gov %></dd>
   <dt><strong><%= model_class.human_attribute_name(:current_address_city) %>:</strong></dt>
   <dd><%= @orphan.current_address_city %></dd>
   <dt><strong><%= model_class.human_attribute_name(:current_address_neighborhood) %>:</strong></dt>

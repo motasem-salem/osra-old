@@ -74,6 +74,6 @@ class PartnersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def partner_params
-    params.require(:partner).permit(:name, :governante, :region, :partnership_start_date, :status)
+    params.require(:partner).permit(:name, :governorate, :region, :partnership_start_date, :status)
   end
 end

@@ -18,7 +18,7 @@ class OrphanListValidator
 
   def get_doc
     begin
-      @file.original_filename =~ /[.](.+)\z/
+      @file.original_filename =~ /[.]([^.]+)\z/
       case $1
         when 'xls'
           @doc = Roo::Spreadsheet.open(@file.path, extension: :xls)
@@ -38,6 +38,13 @@ class OrphanListValidator
     @validation_errors.empty?
   end
 
+  def get_option(options, val)
+    options.each do |op|
+      return op.db if op.cell == val
+    end
+    nil
+  end
+
   def get_orphans
     @@config.first_row.upto(@doc.last_row) do |record|
       rec_valid = true
@@ -53,14 +60,29 @@ class OrphanListValidator
           begin
             case col.type
               when 'String'
-                fields[col.field] = @doc.cell(record, col.column)
-              when 'Boolean'
-                fields[col.field] = @doc.cell(record, col.column) == 'Y'
+                fields[col.field] = val
               when 'Date'
-                fields[col.field] = Date.parse @doc.cell(record, col.column)
+                fields[col.field] = Date.parse val
               when 'Integer'
-                fields[col.field] = @doc.cell(record, col.column).to_i
+                fields[col.field] = val.to_i
+              when /(.+) options\z/i
+                if @@config.options[$1].nil?
+                  rec_valid = false
+                  add_validation_error('Import configuration', "Option values for #{$1} not defined. Please check import settings.")
+                else
+                  puts "*************** val=#{val}"
+                 # option_val = get_option(@@config.options[$1], val)
+                  option_val = @@config.options[$1].find { |opt| opt[:cell] == val}
+                  puts "*************** option_val=#{option_val}"
+                  if option_val.nil?
+                    rec_valid = false
+                    add_validation_error("(#{record},#{col.column})", "Option value: #{val} is not defined for field: #{col.field}")
+                  else
+                    fields[col.field] = option_val[:db]
+                  end
+                end
               else
+                rec_valid = false
                 add_validation_error('Import configuration', "Invalid data type: #{col.type} defined for field: #{col.field}. Please check import settings.")
             end
           rescue

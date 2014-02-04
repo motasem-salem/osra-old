@@ -7,7 +7,7 @@
   <tr>
     <th><%= model_class.human_attribute_name(:osra_id) %></th>
     <th><%= model_class.human_attribute_name(:name) %></th>
-    <th><%= model_class.human_attribute_name(:governante) %></th>
+    <th><%= model_class.human_attribute_name(:governorate) %></th>
     <th><%= model_class.human_attribute_name(:region) %></th>
     <th><%= model_class.human_attribute_name(:partnership_start_date) %></th>
     <th><%= model_class.human_attribute_name(:status) %></th>
@@ -19,7 +19,7 @@
       <tr>
         <td><%= link_to partner.osra_id, partner_path(partner) %></td>
         <td><%= partner.name %></td>
-        <td><%= t_governante partner.governante %></td>
+        <td><%= t_governorate partner.governorate %></td>
         <td><%= partner.region %></td>
         <td><%= partner.partnership_start_date %></td>
         <td><%= t_status partner.status %></td>

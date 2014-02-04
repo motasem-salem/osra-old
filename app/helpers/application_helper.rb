@@ -1,15 +1,15 @@
 module ApplicationHelper
 
-  def governante_options
-    Settings.governantes.collect { |g| [t("governantes.#{g[0]}", :default => g[0]), g[1]] }
+  def governorate_options
+    Settings.governorates.collect { |g| [t("governorates.#{g[0]}", :default => g[0]), g[1]] }
   end
 
-  def t_governante(code)
-    g = Settings.governantes.to_hash.key(code)
+  def t_governorate(code)
+    g = Settings.governorates.to_hash.key(code)
     if g
-      t "governantes.#{g}"
+      t "governorates.#{g}"
     else
-      "Undefined governante code  -- #{code}"
+      "Undefined governorate code  -- #{code}"
     end
   end
 

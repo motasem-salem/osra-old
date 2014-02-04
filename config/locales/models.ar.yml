@@ -2,7 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ar:
-  governantes:
+  governorates:
     Damascus & Rif Dimashq: دمشق و ريف دمشق
     Homs: حمص
     Aleppo: حلب
@@ -31,7 +31,7 @@ ar:
       partner:
         osra_id: الرقم
         name: الإسم
-        governante: المحافظة
+        governorate: المحافظة
         region: المنطقة
         partnership_start_date: تاريخ الشراكة
         status: الحالة

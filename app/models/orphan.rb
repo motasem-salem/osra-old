@@ -22,19 +22,19 @@ class Orphan
   field :guardian_name
   field :guardian_relationship
   field :guardian_id
-  field :original_address_gov, default: 99
+  field :original_address_gov, type: Integer
   field :original_address_city
   field :original_address_neighborhood
   field :original_address_street
   field :original_address_details
-  field :current_address_gov
+  field :current_address_gov, type: Integer
   field :current_address_city
   field :current_address_neighborhood
   field :current_address_street
   field :current_address_details
   field :contact_number
   field :alt_contact_number
-  field :sponsored_by_another_org
+  field :sponsored_by_another_org, type: Boolean
   field :another_org_sponsorship_details
   field :minor_siblings_count, type: Integer
   field :sponsored_minor_siblings_count, type: Integer

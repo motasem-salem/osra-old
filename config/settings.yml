@@ -1,6 +1,4 @@
-countries:
-  - Syria
-governantes:
+governorates:
   Damascus & Rif Dimashq: 11
   Homs: 13
   Aleppo: 12
@@ -28,10 +26,55 @@ sponsor_type:
   - Organization
 orphan_list:
   statuses:
-    - Validated
+    - Uploaded
     - Imported
   import:
     first_row: 4
+    options:
+      boolean:
+        - cell: Y
+          db: true
+        - cell: N
+          db: false
+      mother:
+        - cell: متوفاة
+          db: false
+        - cell: موجودة
+          db: true
+      gender:
+        - cell: ذكر
+          db: Male
+        - cell: أنثى
+          db: Female
+      governorate:
+        - cell: دمشق و ريف دمشق
+          db: 11 
+        - cell: حمص
+          db: 13
+        - cell: حلب
+          db: 12
+        - cell: حماة
+          db: 14
+        - cell: اللاذقية
+          db: 15
+        - cell: دير الزور
+          db: 16
+        - cell: درعا
+          db: 17
+        - cell: إدلب
+          db: 18
+        - cell: الرقة
+          db: 19
+        - cell: الحسكة
+          db: 20
+        - cell: طرطوس
+          db: 21
+        - cell: السويداء
+          db: 22
+        - cell: القنيطرة
+          db: 23
+        - cell: خارج سوريا
+          db: 29
     columns:
       - field: name   
         column: B   
@@ -44,7 +87,7 @@ orphan_list:
       - field: father_is_martyr
         column: D
         mandatory: true
-        type: Boolean
+        type: boolean options
       - field: father_occupation
         column: E
         mandatory: false
@@ -68,15 +111,15 @@ orphan_list:
       - field: mother_alive
         column: J
         mandatory: true
-        type: Boolean
+        type: mother options
       - field: date_of_birth
         column: K
         mandatory: true
         type: Date
-#      - field: gender   
-#        column: L
-#        mandatory: true   
-#        type: String
+      - field: gender
+        column: L
+        mandatory: true
+        type: gender options
       - field: health_status
         column: M
         mandatory: false
@@ -88,57 +131,57 @@ orphan_list:
       - field: goes_to_school
         column: O
         mandatory: false
-        type: String
+        type: boolean options
       - field: guardian_name
-        column: Q
+        column: P
         mandatory: true
         type: String
       - field: guardian_relationship
-        column: R
+        column: Q
         mandatory: true
         type: String
       - field: guardian_id
-        column: S
+        column: R
         mandatory: true
         type: Integer
-#      - field: original_address_gov
-#        column: T
-#        mandatory: true
-#        type: String
+      - field: original_address_gov
+        column: S
+        mandatory: true
+        type: governorate options
       - field: original_address_city
-        column: U
+        column: T
         mandatory: true
         type: String
       - field: original_address_neighborhood
+        column: U
+        mandatory: true
+        type: String
+      - field: original_address_street
         column: V
         mandatory: false
         type: String
-      - field: original_address_street
+      - field: original_address_details
         column: W
         mandatory: false
         type: String
-      - field: original_address_details
+      - field: current_address_gov
         column: X
-        mandatory: false
-        type: String
-#      - field: current_address_gov
-#        column: Y
-#        mandatory: true
-#        type: String
+        mandatory: true
+        type: governorate options
       - field: current_address_city
-        column: Z
-        mandatory: false
+        column: Y
+        mandatory: true
         type: String
       - field: current_address_neighborhood
+        column: Z
+        mandatory: true
+        type: String
+      - field: current_address_street
         column: AA
         mandatory: false
         type: String
-      - field: current_address_street
-        column: AB
-        mandatory: false
-        type: String
       - field: current_address_details
-        column: AC
+        column: AB
         mandatory: false
         type: String
       - field: contact_number
@@ -152,7 +195,7 @@ orphan_list:
       - field: sponsored_by_another_org
         column: AE
         mandatory: true
-        type: Boolean
+        type: boolean options
       - field: another_org_sponsorship_details
         column: AF
         mandatory: false

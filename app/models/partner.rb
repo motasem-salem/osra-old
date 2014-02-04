@@ -7,20 +7,20 @@ class Partner
   after_create :set_osra_id
 
   field :name
-  field :governante, type: Integer
+  field :governorate, type: Integer
   field :region
   field :partnership_start_date, type: Date
   field :status
   field :osra_id
 
-  auto_increment :seq, :scope => :governante
+  auto_increment :seq, :scope => :governorate
 
-  validates_presence_of :name, :governante, :partnership_start_date, :status
+  validates_presence_of :name, :governorate, :partnership_start_date, :status
 
   embeds_many :orphan_lists
 
   def set_osra_id
-    update!(:osra_id => '%d%03d' % [governante, seq])
+    update!(:osra_id => '%d%03d' % [governorate, seq])
   end
 
   def to_param
