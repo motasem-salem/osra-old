@@ -38,13 +38,6 @@ class OrphanListValidator
     @validation_errors.empty?
   end
 
-  def get_option(options, val)
-    options.each do |op|
-      return op.db if op.cell == val
-    end
-    nil
-  end
-
   def get_orphans
     @@config.first_row.upto(@doc.last_row) do |record|
       rec_valid = true
@@ -70,10 +63,7 @@ class OrphanListValidator
                   rec_valid = false
                   add_validation_error('Import configuration', "Option values for #{$1} not defined. Please check import settings.")
                 else
-                  puts "*************** val=#{val}"
-                 # option_val = get_option(@@config.options[$1], val)
                   option_val = @@config.options[$1].find { |opt| opt[:cell] == val}
-                  puts "*************** option_val=#{option_val}"
                   if option_val.nil?
                     rec_valid = false
                     add_validation_error("(#{record},#{col.column})", "Option value: #{val} is not defined for field: #{col.field}")
