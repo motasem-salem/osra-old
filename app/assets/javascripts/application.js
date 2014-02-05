@@ -23,7 +23,7 @@
 var ready;
 ready = function() {
   $('[data-behaviour~=datepicker]').datepicker({
-    format: "dd/mm/yyyy",
+    format: "yyyy-mm-dd",
     todayBtn: "linked",
     todayHighlight: true,
     language: "en",

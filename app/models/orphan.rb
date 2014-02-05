@@ -40,21 +40,24 @@ class Orphan
   field :sponsored_minor_siblings_count, type: Integer
   field :comments
 
-  field :status, default: Settings.orphan_list.statuses[0]
+  field :partner_gov, type: Integer
+
+  field :status, default: Settings.statuses[1]
 
   field :osra_id
 
-  auto_increment :seq, :scope => :original_address_gov
+  belongs_to :orphan_list
 
-  #  validates_presence_of :name, :father_name, :father_is_martyr, :father_date_of_death,
-  #                        :mother_name, :mother_alive, :date_of_birth, :gender, :original_address_gov,
-  #                        :original_address_city, :original_address_neighborhood, :current_address_gov,
-  #                        :current_address_city, :current_address_neighborhood, :contact_number,
-  #                        :sponsored_by_another_org, :minor_siblings_count
+  auto_increment :seq, :scope => :partner_gov
 
+  validates_presence_of :name, :father_name, :father_is_martyr, :father_date_of_death,
+                        :mother_name, :mother_alive, :date_of_birth, :gender, :original_address_gov,
+                        :original_address_city, :original_address_neighborhood, :current_address_gov,
+                        :current_address_city, :current_address_neighborhood, :contact_number,
+                        :sponsored_by_another_org, :minor_siblings_count
 
   def set_osra_id
-    update!(:osra_id => '%d%05d' % [original_address_gov, seq])
+    update!(:osra_id => '%d%05d' % [partner_gov, seq])
   end
 
   def to_param

@@ -62,7 +62,7 @@
               <li><%= link_to "Partners", partners_path %></li>
               <li><%= link_to "Organizations", organizations_path %></li>
               <li><%= link_to "Sponsors", sponsors_path %></li>
-              <li><%= link_to "Sign out: #{current_user.username}", destroy_user_session_path, :method => :delete %></li>
+              <li><%= link_to "Sign out: #{current_user.name}", destroy_user_session_path, :method => :delete %></li>
           <% end %>
         </ul>
       </div>

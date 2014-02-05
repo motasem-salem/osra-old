@@ -22,18 +22,19 @@ class OrphanListsController < ApplicationController
     end
   end
 
- # def show
- #   import
- # end
-
   def import
     @orphan_list = @partner.orphan_lists.find_by(osra_id: params[:id])
-    # get_orphans(@orphan_list)
     v = OrphanListValidator.new
     v.doc = Roo::Spreadsheet.open(@orphan_list.uploaded_list.file.file)
     v.valid?
-    v.extracted_orphans.each(&:save!)
-    @orphan_list.update(:status => Settings.orphan_list.statuses[1])
+
+    v.extracted_orphans.each do |o|
+      o.partner_gov = @orphan_list.partner.governorate
+    end
+
+    @orphan_list.orphans.concat v.extracted_orphans
+    @orphan_list.status = Settings.orphan_list.statuses[1]
+    @orphan_list.save!
 
     redirect_to @partner, :notice => "List imported successfully. #{v.extracted_orphans.size} Orphans added."
   end
