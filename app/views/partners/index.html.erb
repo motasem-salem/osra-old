@@ -19,10 +19,10 @@
       <tr>
         <td><%= link_to partner.osra_id, partner_path(partner) %></td>
         <td><%= partner.name %></td>
-        <td><%= t_governorate partner.governorate %></td>
+        <td><%= t_option 'governorates', partner.governorate %></td>
         <td><%= partner.region %></td>
         <td><%= partner.partnership_start_date %></td>
-        <td><%= t_status partner.status %></td>
+        <td><%= t_option 'statuses', partner.status %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_partner_path(partner), :class => 'btn btn-mini' %>

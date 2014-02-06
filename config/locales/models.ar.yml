@@ -17,6 +17,9 @@ ar:
     Al Suwayada: السويداء
     Al Quneitera: القنيطرة
     Outside Syria: خارج سوريا
+  father_is_martyr:
+    "true": شهيد
+    "false": ليس شهيد
   statuses:
     Inactive: غير مفعل
     Active: مفعل

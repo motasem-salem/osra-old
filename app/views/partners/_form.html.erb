@@ -21,7 +21,7 @@
     <div class="control-group">
       <%= f.label :governorate, :class => 'control-label' %>
       <div class="controls">
-        <%= f.select :governorate, governorate_options %>
+        <%= f.select :governorate, (option_values 'governorates') %>
       </div>
     </div>
     <div class="control-group">
@@ -39,7 +39,7 @@
     <div class="control-group">
       <%= f.label :status, :class => 'control-label' %>
       <div class="controls">
-        <%= f.select :status, status_options %>
+        <%= f.select :status, (option_values 'statuses') %>
       </div>
     </div>
 

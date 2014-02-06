@@ -22,7 +22,7 @@
         <td><%= organization.country %></td>
         <td><%= organization.region %></td>
         <td><%= organization.partnership_start_date %></td>
-        <td><%= t_status organization.status %></td>
+        <td><%= t_option 'statuses', organization.status %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_organization_path(organization), :class => 'btn btn-mini' %>

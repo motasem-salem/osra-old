@@ -7,7 +7,7 @@ class OrphanListsController < ApplicationController
     @valid = v.valid?
     if @valid
       @extracted_orphans = v.extracted_orphans
-      @orphan_list = @partner.orphan_lists.create!(params[:orphan_list])
+      @orphan_list = @partner.orphan_lists.create!(params[:orphan_list].to_h)
     else
       @validation_errors = v.validation_errors
     end

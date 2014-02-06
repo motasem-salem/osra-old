@@ -15,7 +15,7 @@
   <dt><strong><%= model_class.human_attribute_name(:partnership_start_date) %>:</strong></dt>
   <dd><%= @organization.partnership_start_date %></dd>
   <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= t_status @organization.status %></dd>
+  <dd><%= t_option 'statuses', @organization.status %></dd>
 </dl>
 
 <div class="form-actions">

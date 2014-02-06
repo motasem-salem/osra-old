@@ -35,17 +35,17 @@
         <td><%= orphan.name %></td>
         <td><%= orphan.father_name %></td>
         <td><%= orphan.father_is_martyr %></td>
-        <td><%= t_status orphan.status %></td>
+        <td><%= t_option 'statuses', orphan.status %></td>
 
         <td><%= orphan.mother_name %></td>
         <td><%= orphan.mother_alive %></td>
         <td><%= orphan.gender %></td>
         <td><%= orphan.date_of_birth %></td>
 
-        <td><%= t_governorate orphan.original_address_gov %></td>
+        <td><%= t_option 'governorates', orphan.original_address_gov %></td>
         <td><%= orphan.original_address_city %></td>
 
-        <td><%= t_governorate orphan.current_address_gov %></td>
+        <td><%= t_option 'governorates', orphan.current_address_gov %></td>
         <td><%= orphan.current_address_city %></td>
 
         <td><%= orphan.contact_number %></td>

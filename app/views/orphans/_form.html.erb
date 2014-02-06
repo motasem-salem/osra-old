@@ -14,7 +14,7 @@
     <div class="control-group">
       <%= f.label :father_is_martyr, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :father_is_martyr, :class => 'text_field' %>
+        <%= f.select :father_is_martyr, (option_values 'father_is_martyr') %>
       </div>
     </div>
     <div class="control-group">
@@ -38,7 +38,7 @@
     <div class="control-group">
       <%= f.label :father_date_of_death, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :father_date_of_death, :class => 'text_field' %>
+        <%= f.text_field :father_date_of_death, "data-behaviour" => 'datepicker' %>
       </div>
     </div>
     <div class="control-group">
@@ -50,7 +50,13 @@
     <div class="control-group">
       <%= f.label :mother_alive, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :mother_alive, :class => 'text_field' %>
+        <%= f.check_box :mother_alive %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :date_of_birth, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :date_of_birth, "data-behaviour" => 'datepicker'%>
       </div>
     </div>
     <div class="control-group">

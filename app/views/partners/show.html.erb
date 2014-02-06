@@ -22,7 +22,7 @@
     <strong><%= model_class.human_attribute_name(:governorate) %>:</strong>
   </dt>
   <dd>
-    <%= t_governorate @partner.governorate %>
+    <%= t_option 'governorates', @partner.governorate %>
   </dd>
   <dt>
     <strong><%= model_class.human_attribute_name(:region) %>:</strong>
@@ -40,7 +40,7 @@
     <strong><%= model_class.human_attribute_name(:status) %>:</strong>
   </dt>
   <dd>
-    <%= t_status @partner.status %>
+    <%= t_option 'statuses', @partner.status %>
   </dd>
 </dl>
 
@@ -65,7 +65,7 @@
             <td><%= list.osra_id %></td>
             <td><%= list.uploaded_list_filename %></td>
             <td><%= list.created_at %></td>
-            <td><%= t_status list.status %></td>
+            <td><%= t_option 'statuses', list.status %></td>
             <td> <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                              partner_orphan_list_path(@partner, list),
                              :method => :delete,

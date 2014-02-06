@@ -9,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @orphan.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= @orphan.status %></dd>
+  <dd><%= t_option 'statuses', @orphan.status %></dd>
 
   <hr>
   <h4>Parents' Information:</h4>
@@ -17,7 +17,7 @@
   <dt><strong><%= model_class.human_attribute_name(:father_name) %>:</strong></dt>
   <dd><%= @orphan.father_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:father_is_martyr) %>:</strong></dt>
-  <dd><%= @orphan.father_is_martyr %></dd>
+  <dd><%= t_option 'father_is_martyr', @orphan.father_is_martyr %></dd>
   <dt><strong><%= model_class.human_attribute_name(:father_occupation) %>:</strong></dt>
   <dd><%= @orphan.father_occupation %></dd>
   <dt><strong><%= model_class.human_attribute_name(:father_place_of_death) %>:</strong></dt>
@@ -53,7 +53,7 @@
   <h4>Original Address:</h4>
 
   <dt><strong><%= model_class.human_attribute_name(:original_address_gov) %>:</strong></dt>
-  <dd><%= t_governorate @orphan.original_address_gov %></dd>
+  <dd><%= t_option 'governorates', @orphan.original_address_gov %></dd>
   <dt><strong><%= model_class.human_attribute_name(:original_address_city) %>:</strong></dt>
   <dd><%= @orphan.original_address_city %></dd>
   <dt><strong><%= model_class.human_attribute_name(:original_address_neighborhood) %>:</strong></dt>
@@ -67,7 +67,7 @@
   <h4>Current Address:</h4>
 
   <dt><strong><%= model_class.human_attribute_name(:current_address_gov) %>:</strong></dt>
-  <dd><%= t_governorate @orphan.current_address_gov %></dd>
+  <dd><%= t_option 'governorates', @orphan.current_address_gov %></dd>
   <dt><strong><%= model_class.human_attribute_name(:current_address_city) %>:</strong></dt>
   <dd><%= @orphan.current_address_city %></dd>
   <dt><strong><%= model_class.human_attribute_name(:current_address_neighborhood) %>:</strong></dt>

@@ -18,6 +18,9 @@ statuses:
   - Active
   - On Hold
   - Under Revision
+father_is_martyr:
+  - true
+  - false
 gender:
   - Male
   - Female
