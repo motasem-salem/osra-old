@@ -28,6 +28,8 @@
   <dd><%= @orphan.father_date_of_death %></dd>
   <dt><strong><%= model_class.human_attribute_name(:mother_name) %>:</strong></dt>
   <dd><%= @orphan.mother_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mother_alive) %>:</strong></dt>
+  <dd><%= t_option 'mother_alive', @orphan.mother_alive %></dd>
 
   <hr>
   <h4>Orphan Information:</h4>

@@ -20,6 +20,9 @@ ar:
   father_is_martyr:
     "true": شهيد
     "false": ليس شهيد
+  mother_alive:
+    "true": موجودة
+    "false": متوفاة
   statuses:
     Inactive: غير مفعل
     Active: مفعل
