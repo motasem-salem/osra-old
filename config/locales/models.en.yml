@@ -2,6 +2,21 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  governorates:
+    "11": Damascus & Rif Dimashq
+    "12": Aleppo
+    "13": Homs
+    "14": Hama
+    "15": Latakia
+    "16": Deir Al-Zor
+    "17": Daraa
+    "18": Idlib
+    "19": Al-Raqqah
+    "20": Al-Hasakah
+    "21": Tartous
+    "22": Al-Suwayada
+    "23": Al-Quneitera
+    "29": Outside Syrian
   branches:
     "01": Riyadh
     "02": Jeddah

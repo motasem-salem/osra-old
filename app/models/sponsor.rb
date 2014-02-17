@@ -20,4 +20,5 @@ class Sponsor
   field :osra_id, type: Integer
 
   validates_presence_of :branch
+
 end

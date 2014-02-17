@@ -1,18 +1,18 @@
 governorates:
-  Damascus & Rif Dimashq: 11
-  Homs: 13
-  Aleppo: 12
-  Hama: 14
-  Latakia: 15
-  Deir Al Zor: 16
-  Daraa: 17
-  Idlib: 18
-  Al Raqqah: 19
-  Al Hasakah: 20
-  Tartous: 21
-  Al Suwayada: 22
-  Al Quneitera: 23
-  Outside Syria: 29
+  - "11"
+  - "13"
+  - "12"
+  - "14"
+  - "15"
+  - "16"
+  - "17"
+  - "18"
+  - "19"
+  - "20"
+  - "21"
+  - "22"
+  - "23"
+  - "29"
 branches:
   - "01"
   - "02"
