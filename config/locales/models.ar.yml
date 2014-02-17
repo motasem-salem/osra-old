@@ -17,12 +17,21 @@ ar:
     Al Suwayada: السويداء
     Al Quneitera: القنيطرة
     Outside Syria: خارج سوريا
+  branches:
+    "01": الرياض
+    "02": جدة
+    "03": الدمام
+    "11": دبي
+    "21": لندن
   father_is_martyr:
     "true": شهيد
     "false": ليس شهيد
   mother_alive:
     "true": موجودة
     "false": متوفاة
+  genders:
+    Male: ذكر
+    Female: أنثى
   statuses:
     Inactive: غير مفعل
     Active: مفعل

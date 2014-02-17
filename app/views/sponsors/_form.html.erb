@@ -1,86 +1,97 @@
-<%= form_for @sponsor, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
+<%= form_for @sponsor, :html => {:class => 'form-horizontal'} do |f| %>
+    <% if @sponsor.errors.any? %>
+        <div class="alert alert-danger" id="error_explanation">
+          <h4><%= t 'messages.error.validation', :default => "Validation errors:" %></h4>
+          <ul>
+            <% @sponsor.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :status, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :status, Settings.statuses %>
+    <div class="control-group">
+      <%= f.label :branch, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :branch, (option_values 'branches') %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :type, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :type, Settings.sponsor_type %>
+    <div class="control-group">
+      <%= f.label :status, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :status, (option_values 'statuses') %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :organization_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :organization_id, Organization.all.map{|o| [o.name, o.id]}, :include_blank => true %>
+    <div class="control-group">
+      <%= f.label :type, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :type, (option_values 'sponsor_types') %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :gender, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :gender, Settings.gender %>
+    <div class="control-group">
+      <%= f.label :organization_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :organization_id, Organization.all.map { |o| [o.name, o.id] }, :include_blank => true %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :address, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :address, :class => 'text_area' %>
+    <div class="control-group">
+      <%= f.label :gender, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :gender, (option_values 'genders') %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :country, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :country, Settings.countries %>
+    <div class="control-group">
+      <%= f.label :address, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :address, :class => 'text_area' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :partnership_start_date, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :partnership_start_date, "data-behaviour" => 'datepicker' %>
+    <div class="control-group">
+      <%= f.label :country, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :country, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :email, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :email, :class => 'text_field' %>
+    <div class="control-group">
+      <%= f.label :partnership_start_date, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :partnership_start_date, "data-behaviour" => 'datepicker' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :contact_1, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :contact_1, :class => 'text_field' %>
+    <div class="control-group">
+      <%= f.label :email, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.email_field :email, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :contact_2, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :contact_2, :class => 'text_field' %>
+    <div class="control-group">
+      <%= f.label :contact_1, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :contact_1, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :additional_info, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :additional_info, :class => 'text_field' %>
+    <div class="control-group">
+      <%= f.label :contact_2, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :contact_2, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :osra_id, "Osra id", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :osra_id, :class => 'text_field' %>
+    <div class="control-group">
+      <%= f.label :additional_info, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :additional_info, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                sponsors_path, :class => 'btn' %>
-  </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  sponsors_path, :class => 'btn' %>
+    </div>
 <% end %>

@@ -5,16 +5,19 @@ class Sponsor
 
   belongs_to :organization
 
-  field :name, type: String
-  field :status, type: String
-  field :type, type: String
-  field :gender, type: String
-  field :address, type: String
-  field :country, type: String
+  field :name
+  field :status
+  field :type
+  field :branch
+  field :gender
+  field :address
+  field :country
   field :partnership_start_date, type: Date
-  field :email, type: String
-  field :contact_1, type: String
-  field :contact_2, type: String
-  field :additional_info, type: String
+  field :email
+  field :contact_1
+  field :contact_2
+  field :additional_info
   field :osra_id, type: Integer
+
+  validates_presence_of :branch
 end

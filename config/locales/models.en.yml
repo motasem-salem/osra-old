@@ -2,6 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  branches:
+    "01": Riyadh
+    "02": Jeddah
+    "03": Dammam
+    "11": Dubai
+    "21": London
   father_is_martyr:
     "true": Martyr
     "false": Not a martyr

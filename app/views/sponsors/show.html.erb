@@ -10,6 +10,8 @@
   <dd><%= @sponsor.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
   <dd><%= @sponsor.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:branch) %>:</strong></dt>
+  <dd><%= t_option 'branches', @sponsor.branch %></dd>
   <dt><strong><%= model_class.human_attribute_name(:type) %>:</strong></dt>
   <dd><%= @sponsor.type %></dd>
   <dt><strong><%= model_class.human_attribute_name(:gender) %>:</strong></dt>

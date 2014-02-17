@@ -21,6 +21,8 @@ class Organization
 
   has_many :sponsors
 
+  validates_presence_of :name, :country, :status
+
   def to_param
     osra_id.to_s
   end

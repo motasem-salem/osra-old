@@ -1,4 +1,16 @@
 <%= form_for @organization, :html => {:class => 'form-horizontal'} do |f| %>
+
+    <% if @organization.errors.any? %>
+        <div class="alert alert-danger" id="error_explanation">
+          <h4><%= t 'messages.error.validation', :default => "Validation errors:" %></h4>
+          <ul>
+            <% @organization.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
     <div class="control-group">
       <%= f.label :name, :class => 'control-label' %>
       <div class="controls">
@@ -8,7 +20,7 @@
     <div class="control-group">
       <%= f.label :country, :class => 'control-label' %>
       <div class="controls">
-        <%= f.select :country, Settings.countries %>
+        <%= f.text_field :country, :class => 'text_field' %>
       </div>
     </div>
     <div class="control-group">
@@ -26,13 +38,7 @@
     <div class="control-group">
       <%= f.label :status, :class => 'control-label' %>
       <div class="controls">
-        <%= f.select :status, Settings.statuses %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :osra_id, "Osra id", :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :osra_id, :class => 'text_field' %>
+        <%= f.select :status, (option_values 'statuses') %>
       </div>
     </div>
 

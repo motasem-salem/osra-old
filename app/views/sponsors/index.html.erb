@@ -8,6 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:organization_id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:branch) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
       <th><%= model_class.human_attribute_name(:type) %></th>
       <th><%= model_class.human_attribute_name(:gender) %></th>
@@ -29,6 +30,7 @@
         <td><%= link_to sponsor.id, sponsor_path(sponsor) %></td>
         <td><%= sponsor.organization.name rescue '' %></td>
         <td><%= sponsor.name %></td>
+        <td><%= t_option 'branches', sponsor.branch %></td>
         <td><%= sponsor.status %></td>
         <td><%= sponsor.type %></td>
         <td><%= sponsor.gender %></td>

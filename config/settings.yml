@@ -13,6 +13,12 @@ governorates:
   Al Suwayada: 22
   Al Quneitera: 23
   Outside Syria: 29
+branches:
+  - "01"
+  - "02"
+  - "03"
+  - "11"
+  - "21"
 statuses:
   - Inactive
   - Active
@@ -21,10 +27,10 @@ statuses:
 father_is_martyr:
   - true
   - false
-gender:
+genders:
   - Male
   - Female
-sponsor_type:
+sponsor_types:
   - Individual
   - Organization
 orphan_list:
