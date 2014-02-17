@@ -70,7 +70,7 @@
     <div class="control-group">
       <%= f.label :date_of_birth, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :date_of_birth, "data-behaviour" => 'datepicker'%>
+        <%= f.text_field :date_of_birth, "data-behaviour" => 'datepicker' %>
       </div>
     </div>
     <div class="control-group">
@@ -205,6 +205,18 @@
       <%= f.label :another_org_sponsorship_details, :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :another_org_sponsorship_details, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :minor_siblings_count, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :minor_siblings_count, :type => 'number', :min => 0 %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :sponsored_minor_siblings_count, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :sponsored_minor_siblings_count, :type => 'number', :min => 0 %>
       </div>
     </div>
     <div class="control-group">
